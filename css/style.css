@@ -1,0 +1,107 @@
+.body {
+    min-height: 1600px;
+    background-color: #0a192f;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .show>.nav-link {
+    color: #64ffda;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #64ffda;
+    background-color: #0a192f;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    color: #64ffda;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #717c99;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.jumbotron {
+    padding-top: 7rem;
+}
+
+section {
+    padding-top: 5rem;
+}
+
+.about {
+    padding-top: 100px;
+    color: white;
+}
+
+.experience {
+    margin-left: 60px;
+}
+
+.about-fill {
+    width: 800px;
+}
+
+.logo-svg {
+    fill: #dff6ff;
+}
+
+.logo-svg:hover {
+    fill: #64ffda;
+}
+
+#chart line {
+    stroke: #dff6ff;
+    stroke-width: 3;
+}
+
+.btn-footer {
+    border: 1px solid #64ffda;
+    border-radius: px;
+    color: #64ffda;
+    background-color: #0a192f;
+}
+
+.btn-footer:hover {
+    fill: #64ffda;
+}
+
+.btn-contact {
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    color: #64ffda;
+    background-color: #0a192f;
+    padding: 20px 28px 20px 28px;
+}
+
+.rotated {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.about li::marker {
+    /* OR */
+    content: "▹";
+    margin-left: 1px;
+    color: #64ffda;
+    padding-left: 20px;
+    font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui, sans-serif;
+}
+
+.work li::marker {
+    /* OR */
+    content: "▹";
+    margin-left: 1px;
+    color: #64ffda;
+    padding-left: 20px;
+    font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui, sans-serif;
+}
