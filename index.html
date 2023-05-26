@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon-white.ico" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>My Portofolio | Marcello William Wijaya</title>
+</head>
+
+<body id="home" class="body">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark pt-4 pb-4 fixed-top" style="background-color: #0a192f">
+        <div class="container">
+            <!-- <img class="navbar-brand" src="../assets/Logo.png" alt="Logo" width="6%"> -->
+            <a class="navbar-brand fw-bold" href="#">Marcello William Wijaya</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <section class="jumbotron text-center ms-auto me-auto">
+        <img src="../assets/profile.jpg" alt="Marcello William Wijaya" width="200" class="rounded-circle img-thumbnail" />
+        <h1 class="display-4 text-white mt-4 fw-bold">Marcello William Wijaya</h1>
+        <h3 class="text-white fw-light">Student of Bina Nusantara University</h3>
+        <!-- <p class="lead text-white fw-light">Freelancer</p> -->
+        <section>
+            <!-- <div class="position-relative">
+                    <div class="d-flex flex-column bd-highlight ms-2 position-fixed top-50 start-0" style="width: 5%">
+                        <div class="p-2 bd-highlight">
+                            <a href="mailto:marcellowilliam74@gmail.com" aria-label="Gmail" target="_blank" rel="noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill-rule="evenodd" clip-rule="evenodd" class="ms-auto me-auto logo-svg">
+                    <path
+                        d="M22.288 21h-20.576c-.945 0-1.712-.767-1.712-1.712v-13.576c0-.945.767-1.712 1.712-1.712h20.576c.945 0 1.712.767 1.712 1.712v13.576c0 .945-.767 1.712-1.712 1.712zm-10.288-6.086l-9.342-6.483-.02 11.569h18.684v-11.569l-9.322 6.483zm8.869-9.914h-17.789l8.92 6.229s6.252-4.406 8.869-6.229z"
+                    />
+                    </svg>
+                            </a>
+                        </div>
+                        <div class="p-2 bd-highlight">
+                            <a href="https://www.instagram.com/marcello.wijaya13/" aria-label="Instagram" target="_blank" rel="noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" class="ms-auto me-auto logo-svg">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                    </svg>
+                            </a>
+                        </div>
+                        <div class="p-2 bd-highlight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" class="ms-auto me-auto logo-svg">
+                    <path
+                    d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                    />
+                </svg>
+                        </div>
+                        <div id="chart" class="p-2 bd-highlight">
+                            <svg class="ms-auto me-auto logo-svg" width="35" height="300">
+                    <line x1="12" y1="12" x2="12" y2="140"></line>
+                </svg>
+                        </div>
+                    </div>
+            </section> -->
+        </section>
+
+        <!-- About Me -->
+        <section class="about ms-auto me-auto" id="about">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col">
+                        <h2 class="about-me fw-bold">About Me</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4 fs-6 text-center">
+                    <div class="col-6">
+                        <p>Hello! My name is Marcello William Wijaya and I am a student of Bina Nusantara University. My interest in web development started in 2019 when I decided to major in Computer Science so that I could practice my skills and develop
+                            a
+                        </p>
+                        <p>website. My main focus at this time is to add work experience, especially in the field of Computer Science.
+                        </p>
+                        <p>Here are some programming languages that I have learned :
+
+                        </p>
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <ul class="skill-list">
+                                    <li class="ps-2">Html</li>
+                                    <li class="ps-2">Css</li>
+                                    <li class="ps-2">Java Script</li>
+                                    <li class="ps-2">Ms. Office</li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <ul class="skill-list">
+                                    <li class="ps-2">Php</li>
+                                    <li class="ps-2">MySql</li>
+                                    <li class="ps-2">Wordpress</li>
+                                    <!-- <li class="ps-2"></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="work" id="work">
+            <div class="container text-white">
+                <div class="row text-center">
+                    <div class="col">
+                        <h2 class="fw-bold ">Where I've Worked</h2>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="d-flex align-items-start ms-5 text-start justify-content-center">
+                        <div class="col-3">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <button class="nav-link active text-center ms-5" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">DWS Consulting</button>
+                                <!-- <button class="nav-link text-start ms-5" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button> -->
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+                                    <h4>Data Entry @DWS Consulting</h4>
+                                    <h6 class="fst-italic">Sep 2021 - Present</h6>
+                                    <ul class="experience-list">
+                                        <li class="ps-2">Keeping data strictly confidential according to company rules and policies </li>
+                                        <li class="ps-2">Preset and classify the document before entering the data into the computer.</li>
+                                        <li class="ps-2">Enter the data into the software and the proprietary database.</li>
+                                        <li class="ps-2">Check and verify the data entered into the database.</li>
+                                        <li class="ps-2">Correcting partial information and data differences.</li>
+                                        <li class="ps-2">Create backup data that is part of your emergency plan.</li>
+                                        <li class="ps-2">Scan other documents and files as needed Responding to requests <br> for information from authorized members.</li>
+                                        <li class="ps-2">Test the new systems database and software update.</li>
+                                        <li class="ps-2">Managing the documents and records correctly.</li>
+                                        <li class="ps-2">Create relevant reports according to the need.</li>
+                                        <li class="ps-2">Identifying and correcting data entry errors using appropriate <br> quality control methods.</li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">...</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- projects -->
+        <section class="projects mt-4">
+            <div class="container text-light">
+                <div class="row text-center">
+                    <div class="col">
+                        <h2 class="fw-bold ">Some Things I've Built</h2>
+                    </div>
+                </div>
+                <div class="row mt-5 justify-content-evenly">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/figma-icon.png" class="card-img-top" alt="Project Figma">
+                        <div class="card-body text-start">
+                            <h5 class="card-title text-dark">Redesign Web Pegi-Pegi</h5>
+                            <p class="card-text text-dark">Projects Kelompok Meredesign Website Pegi-pegi</p>
+                            <a target="_blank" href="https://www.figma.com/proto/9gyxHzAnVNlMI3xUThNmmy/redesign-pegipegi.com-kelompok-12?node-id=2%3A4&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=2%3A4" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/figma-icon.png" class="card-img-top" alt="Project Figma">
+                        <div class="card-body text-start">
+                            <h5 class="card-title text-dark">Design Aplikasi ResinAja</h5>
+                            <p class="card-text text-dark">Project Kelompok Membuat Aplikasi untuk mata kuliah Entrepreneurship Semester 4.</p>
+                            <a target="_blank" href="https://www.figma.com/proto/KdP0SqFDsM3zkOZVAFPnYO/Apk-Reservasi?scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A4&node-id=1%3A4" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/figma-icon.png" class="card-img-top" alt="Project Figma">
+                        <div class="card-body text-start">
+                            <h5 class="card-title text-dark">Design Aplikasi Vonly</h5>
+                            <p class="card-text text-dark">Project Kelompok Membuat Aplikasi untuk mata kuliah Entrepreneurship Semester 3.</p>
+                            <a target="_blank" href="https://www.figma.com/proto/Muu9abU1vrbSzS0oNb2EfD/VonLy?node-id=2%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2&show-proto-sidebar=1" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/figma-icon.png" class="card-img-top" alt="Project Figma">
+                        <div class="card-body text-start">
+                            <h5 class="card-title text-dark">Design Aplikasi TravelAja</h5>
+                            <p class="card-text text-dark">Projects UAS Membuat Mobile Apps aplikasi E-commerce travel</p>
+                            <a target="_blank" href="https://www.figma.com/proto/bDxSCbAJw2V6JQ5HgSkf4S/Travel-Apps?node-id=1%3A1124&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A1124" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 justify-content-evenly">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/figma-icon.png" class="card-img-top" alt="Project Figma">
+                        <div class="card-body text-start">
+                            <h5 class="card-title text-dark">Projects HCI Lab</h5>
+                            <p class="card-text text-dark">Project Kelompok Membuat tampilan website streming.</p>
+                            <a href="https://github.com/MarcelloWijaya/HCI-Projects" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/figma-icon.png" class="card-img-top" alt="Project Figma">
+                        <div class="card-body text-start">
+                            <h5 class="card-title text-dark">Mobile Apps Temperature Conversion</h5>
+                            <p class="card-text text-dark">Project Mobile Apps Calculator Temperature Conversion.</p>
+                            <a href="https://personal-wzkzwv8r.outsystemscloud.com/PreviewInDevices/?DeviceName=Smartphone&URL=/TemperatureApp/TemperaturScreen?_ts=638103201513122070" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact text-white" id="contact">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col">
+                        <h2 class="fw-bold">What's Next?</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-4 text-center">
+                    <div class="col-5">
+                        <p>I'm currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll give my best to get back to you!</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-2 text-center ">
+                    <div class="col-5">
+                        <button type="button" class="btn-contact mb-4">Say Hello</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <!-- <footer class="text-white text-center pb-2 mt-4">
+        <div class="row justify-content-center">
+            <div class="col-1" style="width: 5%;">
+                <a href="mailto:marcellowilliam74@gmail.com" aria-label="Gmail" target="_blank" rel="noreferrer">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="ms-auto me-auto logo-svg"><path d="M22.288 21h-20.576c-.945 0-1.712-.767-1.712-1.712v-13.576c0-.945.767-1.712 1.712-1.712h20.576c.945 0 1.712.767 1.712 1.712v13.576c0 .945-.767 1.712-1.712 1.712zm-10.288-6.086l-9.342-6.483-.02 11.569h18.684v-11.569l-9.322 6.483zm8.869-9.914h-17.789l8.92 6.229s6.252-4.406 8.869-6.229z"/></svg>
+                </a>
+            </div>
+            <div class="col-1" style="width: 5%;">
+                <a href="https://www.instagram.com/marcello.wijaya13/" aria-label="Instagram" target="_blank" rel="noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="ms-auto me-auto logo-svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+            <div class="col-1" style="width: 5%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="ms-auto me-auto logo-svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </div>
+        </div>
+        <p class="mt-2">Created & Design by
+            <a class="text-white fw-bold" style="text-decoration: none; " href="https://www.instagram.com/marcello.wijaya13/ ">Marcello William Wijaya</a>
+        </p>
+
+    </footer> -->
+
+        <footer class="text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-footer pt-2 pb-2 ps-3 pe-3 btn-floating m-1" href="https://web.facebook.com/profile.php?id=100001971127462" target="_blank" role="button"><i class="fab fa-facebook-f"></i
+              ></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-footer pt-2 pb-2 ps-3 pe-3 btn-floating m-1" href="mailto:marcellowilliam74@gmail.com" target="_blank" role=" button "><i class="far fa-envelope "></i
+              ></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-footer pt-2 pb-2 ps-3 pe-3 btn-floating m-1 " href="https://www.instagram.com/marcello.wijaya13/" target="_blank " role="button "><i class="fab fa-instagram "></i
+              ></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-footer pt-2 pb-2 ps-3 pe-3 btn-floating m-1 " href="https://www.linkedin.com/in/marcello-wijaya-39342a228/" target="_blank " role="button "><i class="fab fa-linkedin-in "></i
+              ></a>
+                    <!-- Github -->
+                    <a class="btn btn-footer pt-2 pb-2 ps-3 pe-3 btn-floating m-1 " href="https://github.com/Cello1303" target="_blank " role="button "><i class="fab fa-github "></i
+              ></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2); ">
+                Created & Design by
+                <a class="text-white fw-bold " style="text-decoration: none; " href="https://www.instagram.com/marcello.wijaya13/ ">Marcello William Wijaya</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js " integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF " crossorigin="anonymous "></script>
+    -->
+</body>
+
+</html>
