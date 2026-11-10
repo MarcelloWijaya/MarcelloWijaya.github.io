@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marcello-wijaya-github-io-s26f.vercel.app/sitemap.xml
