@@ -1,25 +1,37 @@
-# DESIGN.md — Marcello William Wijaya portfolio
+# Design direction: Soft Modern Engineer
 
-## Visual direction
-Editorial engineering portfolio. It should feel like a personal field notebook about building working software, not a generic SaaS landing page.
+This is a portfolio for Marcello William Wijaya. It needs to show credible professional software work in a friendly, approachable layout, not imitate a generic SaaS landing page.
 
-## Dials
-ENERGY 2 / RHYTHM 2 / MOTION 2.
+## Direction chosen
 
-## Palette
-Warm paper (#f5f2eb), charcoal evergreen (#232a28), restrained terracotta (#a64029). Dark mode reverses the paper/ink relationship. Project artwork keeps a few muted solid hues to distinguish projects, not decorate the interface.
+The selected reference is a warm cream, sage and terracotta composition with an expressive portrait, clear project navigation, rounded corners and comfortable whitespace. The interface does not use gradients, glass backgrounds, or large decorative glows.
 
-## Type
-Manrope for readable display text and narrative, DM Mono for compact factual metadata. Monospace is a utility, not the entire identity. Large headline leads with engineering outcomes.
+Core colors:
+- Cream: #f7f5f0
+- Charcoal: #222725
+- Sage: #687d64
+- Terracotta: #b75d40
+- Quiet neutral: #e9ede5
 
-## Layout
-A large left-led title, compact personal photo and description, a flat information strip, real project descriptions, a distinctly separated biography, and a high-clarity contact section. Avoid generic centered hero cards and fabricated metrics.
+Manrope handles headlines, navigation, and body text. DM Mono is reserved for compact factual metadata. Light is the default; dark mode remains available.
+
+## Content hierarchy
+
+Hero: identity and personal expertise, real photo and CV.
+Work: four public company profiles first, followed by personal and professional projects, then earlier design exploration.
+Project detail: what the site or application does, implementation details that are supported by the source, and a live link where available.
+About and contact: verified professional profile, resume and clear contact options.
 
 ## Motion
-Hover motion shows that an element is interactive. Buttons lift by 1–2 px and cards by up to 3 px in about 190 ms, without loops or animated gradients. Reduced-motion users see stable controls.
 
-## Constraints
-Never use gradients, glows, translucent glass cards or ornamental starbursts. Real project evidence over fabricated figures. Full keyboard focus, touch targets, mobile layout and light/dark modes remain functional.
+Cards rotate to reveal details on hover only when the pointing device supports hover. Native toggle buttons provide touch and keyboard access. Reduced-motion support must remove transitions without hiding functionality. Buttons react to hover and press with restrained translations.
 
-## Anti-Slop filter
-Use https://github.com/miqdadbadjuber/anti-slop/blob/main/ANTISLOP.md as the review filter; verify its current rules before future changes. Decision reasons are documented above. Audit before delivery, including visual regression and interaction checks.
+## Quality rules
+
+- Every project claim must be grounded in provided source or clearly qualified as conceptual.
+- Do not create fictitious metrics, testimonials, customer logos, or screenshots.
+- Keep private repository links out of client-side data.
+- Flat colors only. Maintain the light and dark variants.
+- No horizontal overflow at 320px. All interactive targets must remain reachable using keyboard and touch.
+- Prefer simple components and data files over adding more unrelated dependencies.
+- Test search/filter, card flip, deep-link case studies, contact, CV and metadata before release.
