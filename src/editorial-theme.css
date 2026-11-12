@@ -1,0 +1,398 @@
+/*
+ * Editorial Engineering — Marcello portfolio
+ * Flat colours only. Visual hierarchy comes from type, rules, and spacing,
+ * not gradients, glow effects, or floating decorative elements.
+ */
+:root,
+html[data-theme="light"] {
+  --paper: #f5f2eb;
+  --ink: #232a28;
+  --muted-ink: #525c57;
+  --rule: #c9cec5;
+  --surface: #fefcf7;
+  --surface-quiet: #eceae2;
+  --accent: #a64029;
+  --accent-ink: #ffffff;
+  --stripe: #24302d;
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  --paper: #1d2624;
+  --ink: #eeeae1;
+  --muted-ink: #b9c3bc;
+  --rule: #55605a;
+  --surface: #29342f;
+  --surface-quiet: #222e2a;
+  --accent: #eea589;
+  --accent-ink: #18211e;
+  --stripe: #121a18;
+  color-scheme: dark;
+}
+html,
+html[data-theme],
+html[data-theme] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+html[data-theme] body { font-family: 'Manrope', system-ui, sans-serif; }
+html[data-theme] button:focus-visible,
+html[data-theme] a:focus-visible,
+html[data-theme] input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+html[data-theme] ::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* Navigation: solid, quiet, deliberate. */
+html[data-theme] .header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: none;
+  height: 76px;
+}
+html[data-theme] .brand { font-size: 25px; font-weight: 750; letter-spacing: -.065em; }
+html[data-theme] .brand > span { color: var(--accent); font-size: 27px; vertical-align: baseline; margin: 0; }
+html[data-theme] .nav { color: var(--muted-ink); font-size: 12px; gap: 31px; }
+html[data-theme] .nav > a:hover,
+html[data-theme] .nav > a.active,
+html[data-theme] .social-links a:hover { color: var(--accent); }
+html[data-theme] .nav-contact,
+html[data-theme] .theme-toggle,
+html[data-theme] .copy-email-button {
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  min-height: 44px;
+}
+html[data-theme] .nav-contact:hover,
+html[data-theme] .theme-toggle:hover,
+html[data-theme] .copy-email-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+html[data-theme] .menu-button { color: var(--ink); }
+html[data-theme] .nav.open { background: var(--paper); border-color: var(--rule); }
+
+/* Editorial hero: a direct promise instead of decorative flourishes. */
+html[data-theme] .hero { padding-top: 72px; padding-bottom: 30px; }
+html[data-theme] .hero-overline,
+html[data-theme] .hero-rule { color: var(--muted-ink); }
+html[data-theme] .hero-overline { font-size: 11px; letter-spacing: .075em; }
+html[data-theme] .hero h1 {
+  color: var(--ink);
+  font-size: clamp(64px, 8.4vw, 118px);
+  letter-spacing: -.075em;
+  line-height: 1.045;
+  font-weight: 700;
+  margin: 53px 0 50px;
+}
+html[data-theme] .lime-text,
+html[data-theme] .profile-source,
+html[data-theme] .role,
+html[data-theme] .contact h2 > span { color: var(--accent); }
+html[data-theme] .hero-bio p,
+html[data-theme] .hero-location span { color: var(--muted-ink); }
+html[data-theme] .hero-bio strong { color: var(--ink); }
+html[data-theme] .hero-bio img,
+html[data-theme] .about-photo img { filter: none; border-radius: 0; }
+html[data-theme] .hero-bio img { width: 65px; height: 74px; object-fit: cover; }
+html[data-theme] .hero-location { color: var(--ink); }
+html[data-theme] .hero-rule { border-color: var(--rule); }
+html[data-theme] .round-link > svg { border-color: var(--ink); border-radius: 2px; }
+html[data-theme] .round-link:hover > svg { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+html[data-theme] .hero-asterisk,
+html[data-theme] .photo-symbol { display: none; }
+
+/* Flat, high-contrast information strip. */
+html[data-theme] .skills-strip {
+  background: var(--stripe);
+  color: #f8f4ed;
+  margin-top: 30px;
+  padding: 23px 16px;
+}
+html[data-theme] .skills-strip > div {
+  justify-content: center;
+  gap: 16px 27px;
+  flex-wrap: wrap;
+  white-space: normal;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .055em;
+}
+html[data-theme] .skills-strip span { color: #e5a084; font-size: 14px; }
+
+/* Sections and project work: typographic hierarchy over decoration. */
+html[data-theme] .section { padding-top: 88px; padding-bottom: 88px; }
+html[data-theme] .section-top { border-top: 1px solid var(--rule); padding-top: 19px; }
+html[data-theme] .eyebrow { color: var(--accent); font-size: 11px; }
+html[data-theme] .subtle,
+html[data-theme] .muted,
+html[data-theme] .project-meta p,
+html[data-theme] .project-caption,
+html[data-theme] .body-copy,
+html[data-theme] .contact-bottom p,
+html[data-theme] footer p { color: var(--muted-ink); }
+html[data-theme] h2 { color: var(--ink); font-weight: 650; }
+html[data-theme] .project-toolbar { gap: 18px; }
+html[data-theme] .filters { border-color: var(--rule); border-radius: 2px; }
+html[data-theme] .filters button {
+  color: var(--muted-ink);
+  font-size: 12px;
+  border-radius: 0;
+}
+html[data-theme] .filters button.selected {
+  background: var(--ink);
+  color: var(--paper);
+}
+html[data-theme] .project-search,
+html[data-theme] .project-empty-state { border-color: var(--rule); color: var(--muted-ink); border-radius: 2px; }
+html[data-theme] .project-search:focus-within { border-color: var(--accent); }
+html[data-theme] .project-search input { color: var(--ink); font-size: 12px; }
+html[data-theme] .project-search input::placeholder { color: var(--muted-ink); }
+html[data-theme] .project-search-clear:hover { color: var(--accent); }
+html[data-theme] .project-art {
+  border-radius: 0;
+  transition: none;
+  color: #252f2a;
+}
+html[data-theme] .project-visual { border-radius: 0; }
+html[data-theme] .project-visual:hover .project-art { transform: none; }
+.lime { background: #d8d8bf; }
+.peach { background: #dfc3ab; }
+.lavender { background: #bbc5cc; }
+.blue { background: #b4cdc4; }
+.pink { background: #d9b4ad; }
+.silver { background: #d0d1c9; }
+html[data-theme] .art-headline { font-weight: 650; }
+html[data-theme] .ticket { border: 1px solid #475248; border-radius: 0; background: #f8f3e6; box-shadow: none; }
+html[data-theme] .orb { border-radius: 1px; background: #ad876e; box-shadow: none; }
+html[data-theme] .lavender .orb { background: #788da3; }
+html[data-theme] .play-disc { border-radius: 1px; box-shadow: none; }
+html[data-theme] .project-open { border-radius: 2px; background: #24302d; color: #fff; }
+html[data-theme] .project-visual:hover .project-open { background: var(--accent); color: var(--accent-ink); }
+html[data-theme] .project-tag,
+html[data-theme] .project-status {
+  color: var(--muted-ink);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  font-size: 10px;
+}
+html[data-theme] .project-meta h3 { color: var(--ink); }
+html[data-theme] .project-caption { font-size: 13px; }
+
+/* Profiles and case studies read like documentation, not dashboard tiles. */
+html[data-theme] .about {
+  background: var(--surface-quiet);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+html[data-theme] .about-intro,
+html[data-theme] .profile-facts strong { color: var(--ink); }
+html[data-theme] .about-photo > span,
+html[data-theme] .profile-facts span,
+html[data-theme] .profile-facts small,
+html[data-theme] .experience-title > span { color: var(--muted-ink); }
+html[data-theme] .toolkit > div > span,
+html[data-theme] .career-tags span,
+html[data-theme] .expertise-tags > span,
+html[data-theme] .case-detail-stack span {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  border-radius: 1px;
+  font-size: 11px;
+  padding: 7px 10px;
+}
+html[data-theme] .profile-facts,
+html[data-theme] .career-entry,
+html[data-theme] .experience,
+html[data-theme] footer.shell { border-color: var(--rule); }
+html[data-theme] .career-timeline { border-color: var(--rule); }
+html[data-theme] .career-entry::before { background: var(--accent); box-shadow: 0 0 0 4px var(--surface-quiet); }
+html[data-theme] .expertise-card,
+html[data-theme] .case-study,
+html[data-theme] .related-case-study-card,
+html[data-theme] .case-detail-section li {
+  background: var(--surface);
+  background-image: none;
+  border: 1px solid var(--rule);
+  border-radius: 1px;
+  box-shadow: none;
+}
+html[data-theme] .expertise-card:hover,
+html[data-theme] .related-case-study-card:hover {
+  border-color: var(--accent);
+  transform: none;
+}
+html[data-theme] .expertise-card-top,
+html[data-theme] .case-top,
+html[data-theme] .case-study-link,
+html[data-theme] .related-case-study-link,
+html[data-theme] .case-detail-section li::before { color: var(--accent); }
+html[data-theme] .expertise-card > p,
+html[data-theme] .case-study > p,
+html[data-theme] .related-case-study-card > p,
+html[data-theme] .case-detail-summary,
+html[data-theme] .case-detail-section > .case-detail-intro { color: var(--muted-ink); }
+html[data-theme] .case-study ul,
+html[data-theme] .case-detail-section li { color: var(--ink); }
+html[data-theme] .case-study .case-note,
+html[data-theme] .related-case-study-status { color: var(--muted-ink); border-color: var(--rule); }
+html[data-theme] .case-detail-section,
+html[data-theme] .case-detail-meta > div,
+html[data-theme] .case-detail-related { border-color: var(--rule); }
+html[data-theme] .case-detail-meta span { color: var(--muted-ink); }
+html[data-theme] .case-detail-back,
+html[data-theme] .case-detail-kicker > a { color: var(--muted-ink); }
+html[data-theme] .case-detail-back:hover,
+html[data-theme] .case-detail-kicker > a:hover { color: var(--accent); }
+html[data-theme] .case-detail-status,
+html[data-theme] .case-detail-share {
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+}
+html[data-theme] .case-detail-share:hover { color: var(--accent); border-color: var(--accent); }
+html[data-theme] .case-detail-note { background: var(--surface-quiet); border-color: var(--accent); color: var(--muted-ink); }
+html[data-theme] .case-detail-contact { background: var(--accent); color: var(--accent-ink); border-radius: 2px; }
+html[data-theme] .case-detail-copy-status { color: var(--accent); }
+
+/* Contact: one memorable call to action, no raised pill buttons. */
+html[data-theme] .contact h2 { letter-spacing: -.065em; }
+html[data-theme] .contact h2 > span { font-family: Georgia, serif; font-weight: 400; }
+html[data-theme] .contact-button {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 2px;
+  font-weight: 650;
+  transition: background-color .2s ease;
+}
+html[data-theme] .contact-button:hover { transform: none; filter: brightness(.93); }
+html[data-theme] .copy-status { color: var(--accent); }
+html[data-theme] .email { border-color: var(--rule); }
+html[data-theme] .social-links { color: var(--ink); }
+html[data-theme] .skip-link {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1px solid var(--accent);
+  top: -100px;
+}
+html[data-theme] .skip-link:focus { top: 8px; }
+
+@media (max-width: 1000px) {
+  html[data-theme] .hero h1 { font-size: clamp(52px, 8.3vw, 86px); }
+  html[data-theme] .skills-strip > div { flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  html[data-theme] .header { height: 70px; }
+  html[data-theme] .nav { top: 70px; }
+  html[data-theme] .nav.open { gap: 20px; }
+  html[data-theme] .hero { padding-top: 43px; }
+  html[data-theme] .hero-overline { font-size: 9px; line-height: 1.5; gap: 12px; }
+  html[data-theme] .hero-overline > span:last-child { font-size: 9px; text-align: right; }
+  html[data-theme] .hero h1 {
+    font-size: clamp(33px, 8.6vw, 60px);
+    letter-spacing: -.065em;
+    line-height: 1.08;
+    margin: 45px 0 37px;
+  }
+  html[data-theme] .hero-bio p { font-size: 12px; }
+  html[data-theme] .hero-location { display: none; }
+  html[data-theme] .hero-rule { font-size: 9px; }
+  html[data-theme] .skills-strip { padding: 21px 18px; }
+  html[data-theme] .skills-strip > div {
+    width: auto;
+    padding: 0;
+    gap: 12px 17px;
+    font-size: 10px;
+    line-height: 1.7;
+    text-align: center;
+  }
+  html[data-theme] .section { padding-top: 61px; padding-bottom: 61px; }
+  html[data-theme] .section-top { gap: 15px; }
+  html[data-theme] .eyebrow { font-size: 10px; }
+  html[data-theme] .subtle { font-size: 10px; max-width: 140px; }
+  html[data-theme] .filters button { font-size: 11px; }
+  html[data-theme] .project-meta { gap: 12px; }
+  html[data-theme] .project-tag,
+  html[data-theme] .project-status { font-size: 10px; }
+  html[data-theme] .case-study ul,
+  html[data-theme] .case-study > p,
+  html[data-theme] .expertise-card > p,
+  html[data-theme] .related-case-study-card > p,
+  html[data-theme] .case-detail-section li { font-size: 12px; }
+  html[data-theme] .case-top { font-size: 10px; }
+  html[data-theme] .case-top > span:last-child { font-size: 9px; }
+  html[data-theme] .contact-arrow { opacity: .25; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] *, html[data-theme] *::before, html[data-theme] *::after {
+    scroll-behavior: auto;
+    animation: none;
+    transition: none;
+  }
+}
+
+
+/*
+ * Anti-Slop motion contract (MOTION 2):
+ * Controls react to intent. Project tiles express clickability with a 3px lift
+ * and a border change. No perpetual animation, bounce, or scroll hijacking.
+ */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html[data-theme] .nav-contact,
+  html[data-theme] .theme-toggle,
+  html[data-theme] .copy-email-button,
+  html[data-theme] .filters button,
+  html[data-theme] .project-open,
+  html[data-theme] .project-visual,
+  html[data-theme] .project-art,
+  html[data-theme] .expertise-card,
+  html[data-theme] .case-study,
+  html[data-theme] .related-case-study-card,
+  html[data-theme] .contact-button,
+  html[data-theme] .case-detail-share,
+  html[data-theme] .case-detail-contact,
+  html[data-theme] .round-link > svg {
+    transition: transform 190ms cubic-bezier(.2,.7,.25,1), background-color 190ms ease, border-color 190ms ease, color 190ms ease;
+  }
+  html[data-theme] .project-visual:hover .project-art { transform: translateY(-3px); }
+  html[data-theme] .project-visual:hover .project-open { transform: translate(-2px, -2px); }
+  html[data-theme] .expertise-card:hover,
+  html[data-theme] .case-study:hover,
+  html[data-theme] .related-case-study-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  html[data-theme] .nav-contact:hover,
+  html[data-theme] .contact-button:hover,
+  html[data-theme] .case-detail-contact:hover {
+    transform: translateY(-2px);
+  }
+  html[data-theme] .theme-toggle:hover,
+  html[data-theme] .copy-email-button:hover,
+  html[data-theme] .case-detail-share:hover {
+    transform: translateY(-1px);
+  }
+  html[data-theme] .nav-contact:active,
+  html[data-theme] .contact-button:active,
+  html[data-theme] .case-detail-contact:active,
+  html[data-theme] .theme-toggle:active,
+  html[data-theme] .copy-email-button:active,
+  html[data-theme] .filters button:active { transform: translateY(0); }
+}
+/* Tap feedback remains visible for touch devices without hover. */
+html[data-theme] .contact-button:active,
+html[data-theme] .case-detail-contact:active { filter: brightness(.86); }
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] .project-visual:hover .project-art,
+  html[data-theme] .expertise-card:hover,
+  html[data-theme] .case-study:hover,
+  html[data-theme] .related-case-study-card:hover,
+  html[data-theme] .nav-contact:hover,
+  html[data-theme] .contact-button:hover,
+  html[data-theme] .case-detail-contact:hover { transform: none; }
+}

@@ -1,0 +1,32 @@
+name: Validate portfolio UI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Check flat-color design constraint
+        run: |
+          if grep -Eni '(linear|radial|conic)-gradient[[:space:]]*\(' src/*.css; then
+            echo 'Gradient styles are not allowed in this theme.'
+            exit 1
+          fi
+          echo 'No gradient styles detected.'
+      - name: Check core output
+        run: |
+          test -s dist/index.html
+          test -f dist/assets/Marcello-Wijaya-CV.pdf
