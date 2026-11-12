@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, RotateCcw, Code2, Smartphone, Database, ClipboardList, Send, Layers } from 'lucide-react';
+import { ArrowUpRight, RotateCcw, Code2, Smartphone, Database, Layers, Building2 } from 'lucide-react';
 
 const icons = {
   Software: Layers,
+  Websites: Building2,
   Development: Database,
   'UI / UX': Smartphone
 };
@@ -18,7 +19,9 @@ export function ProjectFlipCard({
   hrefLabel = 'View project',
   frontArt,
   index,
-  variant = 'engineering'
+  variant = 'engineering',
+  brand,
+  tone = 'sage'
 }) {
   const [flipped, setFlipped] = useState(false);
   const Icon = icons[category] || Code2;
@@ -34,6 +37,7 @@ export function ProjectFlipCard({
       className={`soft-project-card ${variant === 'archive' ? 'is-archive' : 'is-engineering'} ${flipped ? 'is-flipped' : ''}`}
       onMouseEnter={revealOnHover}
       onMouseLeave={() => setFlipped(false)}
+      onKeyDown={(event) => { if (event.key === 'Escape' && flipped) { setFlipped(false); event.preventDefault(); } }}
     >
       <div className="soft-project-scene">
         <div className="soft-project-rotator">
@@ -41,7 +45,8 @@ export function ProjectFlipCard({
             {frontArt ? (
               <div className="soft-project-visual">{frontArt}</div>
             ) : (
-              <div className="soft-project-illustration" aria-hidden="true">
+              <div className={`soft-project-illustration ${brand ? 'has-company-brand tone-' + tone : ''}`} aria-hidden="true">
+                {brand && <div className="soft-company-brand"><strong>{brand}</strong><span>{title}</span></div>}
                 <div className="soft-project-symbol">
                   <Icon size={31} strokeWidth={1.5}/>
                 </div>
@@ -62,7 +67,7 @@ export function ProjectFlipCard({
                 <div className="soft-technology-list">
                   {technologies.slice(0, 3).map(tech => <span key={tech}>{tech}</span>)}
                 </div>
-                <span className="soft-project-hint">Hover or tap for details <ArrowUpRight size={15} aria-hidden="true"/></span>
+                <span className="soft-project-hint">Flip for details <ArrowUpRight size={15} aria-hidden="true"/></span>
               </div>
             </div>
           </div>
