@@ -43,3 +43,9 @@ Existing generic illustration blocks are concept artwork, not screenshots of the
 ## QA and roadmap
 
 See `AUDIT-2026-11-12.md` for what was fixed and what still requires browser-based verification.
+
+## Language and motion
+
+The portfolio supports English (EN, default) and Indonesian (ID). Use the language switcher in the header on both the homepage and project detail views. Language switching does not change the project URLs, source code visibility, contact details or technologies. The English and Indonesian copy is maintained in `src/i18n.js` with explicit translations and English fallback for newly added content.
+
+`src/usePortfolioMotion.js` and `src/motion.css` provide progressive scroll-reveal effects, restrained hero and button transitions, career-card hover effects and a reading-progress line. Motion is disabled or minimized for visitors who prefer reduced motion. The project flip-card interactions and dark-mode toggle remain unchanged.
