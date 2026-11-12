@@ -74,15 +74,15 @@ test('portfolio includes contact links and downloadable CV', () => {
   assert.ok(src.includes('/assets/Marcello-Wijaya-CV.pdf'));
 });
 
-test('Soft Slate & Navy tokens exist consistently in light and dark themes', () => {
+test('Graphite & Titanium tokens exist consistently in light and dark themes', () => {
   for (const file of ['src/editorial-theme.css', 'src/soft-human.css']) {
     const css = read(file);
-    for (const value of ['#F7F9FB', '#202934', '#506B80', '#E8EEF2', '#111B27', '#F0F5F9', '#B9D3E6', '#1C2B3B']) {
+    for (const value of ['#F5F6F7', '#202428', '#586873', '#E5E9EC', '#15191D', '#F3F5F6', '#B8C5CD', '#232B31']) {
       assert.ok(css.includes(value), `${file} missing ${value}`);
     }
     assert.ok(!css.includes('var(--sage)'), `${file} includes obsolete green theme token`);
   }
-  assert.ok(read('index.html').includes('name="theme-color" content="#F7F9FB"'));
+  assert.ok(read('index.html').includes('name="theme-color" content="#F5F6F7"'));
   const primary = read('src/soft-human.css');
   assert.match(primary, /\.soft-project-card\.is-flipped \.soft-project-rotator\s*\{transform:rotateY\(180deg\)\}/);
   assert.match(primary, /prefers-reduced-motion:reduce/);
@@ -96,7 +96,7 @@ test('light mode is the default on every page load, dark mode still toggles', ()
   assert.ok(!html.includes('localStorage.getItem("portfolio-theme")'));
   assert.ok(!src.includes("localStorage.getItem('portfolio-theme')"));
   assert.ok(src.includes("onClick={()=>setTheme(theme==='dark'?'light':'dark')}"));
-  assert.ok(src.includes("theme==='dark'?'#111B27':'#F7F9FB'"));
+  assert.ok(src.includes("theme==='dark'?'#15191D':'#F5F6F7'"));
 });
 
 test('contact email and AnaKuEducare work experience are correct', () => {
@@ -161,9 +161,22 @@ test('MWW wordmark is used consistently and compact icon replaces legacy favicon
   assert.match(brand,/viewBox="0 0 216 62"/);
   assert.match(brand,/className="mww-dot"/);
   assert.match(favicon,/viewBox="0 0 96 96"/);
-  assert.match(favicon,/<rect width="96" height="96" rx="20" fill="#202934"/);
+  assert.match(favicon,/<rect width="96" height="96" rx="20" fill="#202428"/);
   assert.ok(html.includes('rel="icon" type="image/svg+xml" href="/assets/mww-favicon.svg"'));
   assert.match(styles,/\.mww-wordmark/);
   assert.match(styles,/var\(--ink\)/);
   assert.match(styles,/prefers-reduced-motion:no-preference/);
+});
+
+test('Graphite & Titanium palette is applied across legacy styles and metadata', () => {
+  const oldPalette=['#F7F9FB','#202934','#506B80','#E8EEF2','#111B27','#B9D3E6'];
+  const files=['src/editorial-theme.css','src/soft-human.css','src/style.css','src/profile.css','src/case-studies.css','src/project-case-study.css','public/assets/mww-favicon.svg'];
+  for(const filename of files){
+    const data=read(filename).toUpperCase();
+    for(const value of oldPalette)assert.ok(!data.includes(value), `${filename} still contains ${value}`);
+  }
+  assert.match(read('src/main.jsx'), /theme==='dark'\?'#15191D':'#F5F6F7'/);
+  assert.match(read('public/assets/mww-favicon.svg'), /fill="#B8C5CD"/);
+  assert.match(read('src/motion.css'), /prefers-reduced-motion:reduce/);
+  assert.match(read('src/soft-human.css'), /\.soft-project-card\.is-flipped \.soft-project-rotator/);
 });
