@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { t } from './i18n';
 import { ArrowUpRight, RotateCcw, Code2, Smartphone, Database, Layers, Building2 } from 'lucide-react';
 
 const icons = {
@@ -10,6 +11,7 @@ const icons = {
 
 export function ProjectFlipCard({
   title,
+  language = 'en',
   category,
   status,
   description,
@@ -45,8 +47,8 @@ export function ProjectFlipCard({
         type="button"
         onClick={() => setFlipped(current => !current)}
         aria-pressed={flipped}
-        aria-label={flipped ? `Show the front of ${title}` : `Flip ${title} to learn what it does`}
-        title={flipped ? 'Back to preview' : 'Read project summary'}
+        aria-label={flipped ? (language==='id'?`Tampilkan depan ${title}`:`Show the front of ${title}`) : (language==='id'?`Balik ${title} untuk membaca detail`:`Flip ${title} to learn what it does`)}
+        title={t(flipped ? 'Back to preview' : 'Read project summary',language)}
       >
         <RotateCcw size={17} strokeWidth={1.8} aria-hidden="true"/>
       </button>
@@ -71,25 +73,25 @@ export function ProjectFlipCard({
               </div>
             )}
             <div className="soft-project-front-info">
-              <span className="soft-project-kicker">{category} <span aria-hidden="true">·</span> {status}</span>
+              <span className="soft-project-kicker">{t(category,language)} <span aria-hidden="true">·</span> {t(status,language)}</span>
               <h3>{title}</h3>
-              <p>{description}</p>
+              <p>{t(description,language)}</p>
               <div className="soft-project-front-bottom">
                 <div className="soft-technology-list">
                   {technologies.slice(0, 3).map(tech => <span key={tech}>{tech}</span>)}
                 </div>
-                <span className="soft-project-hint">Use flip button for details <ArrowUpRight size={15} aria-hidden="true"/></span>
+                <span className="soft-project-hint">{t('Use flip button for details',language)} <ArrowUpRight size={15} aria-hidden="true"/></span>
               </div>
             </div>
           </div>
 
           <div className="soft-project-face soft-project-back" role="region" aria-label={`${title} project details`} tabIndex={flipped ? 0 : -1} aria-hidden={!flipped} inert={!flipped}>
-            <span className="soft-project-back-label">About this project</span>
+            <span className="soft-project-back-label">{t('About this project',language)}</span>
             <h3>{title}</h3>
-            <p className="soft-project-purpose">{description}</p>
+            <p className="soft-project-purpose">{t(description,language)}</p>
             {points.length > 0 && (
               <ul className="soft-project-points">
-                {points.slice(0, 2).map(point => <li key={point}>{point}</li>)}
+                {points.slice(0, 2).map(point => <li key={point}>{t(point,language)}</li>)}
               </ul>
             )}
             <div className="soft-project-back-footer">
@@ -101,9 +103,9 @@ export function ProjectFlipCard({
                   {hrefLabel} <ArrowUpRight size={17} aria-hidden="true"/>
                 </a>
               ) : (
-                <span className="soft-project-unavailable">Work in progress</span>
+                <span className="soft-project-unavailable">{t('Work in progress',language)}</span>
               )}
-              {siteUrl && <a className="soft-project-live-link" href={siteUrl} target="_blank" rel="noopener noreferrer">Visit live website <ArrowUpRight size={16} aria-hidden="true"/></a>}
+              {siteUrl && <a className="soft-project-live-link" href={siteUrl} target="_blank" rel="noopener noreferrer">{t('Visit live website',language)} <ArrowUpRight size={16} aria-hidden="true"/></a>}
             </div>
           </div>
         </div>

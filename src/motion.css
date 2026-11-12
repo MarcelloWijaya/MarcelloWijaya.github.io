@@ -1,0 +1,67 @@
+/* Motion: editorial, responsive, and free of decorative loops. */
+:root { --read-progress:0%; }
+html[data-theme] .header::after{
+  content:"";position:absolute;left:0;bottom:-1px;width:var(--read-progress);
+  height:2px;background:var(--accent);pointer-events:none;z-index:3;
+}
+@media (prefers-reduced-motion:no-preference){
+  html[data-theme] .soft-hero-copy > * {animation:hero-arrive .7s both cubic-bezier(.22,1,.36,1)}
+  html[data-theme] .soft-hero-copy > :nth-child(2){animation-delay:.08s}
+  html[data-theme] .soft-hero-copy > :nth-child(3){animation-delay:.15s}
+  html[data-theme] .soft-hero-copy > :nth-child(4){animation-delay:.21s}
+  html[data-theme] .soft-hero-copy > :nth-child(5){animation-delay:.27s}
+  html[data-theme] .soft-portrait {animation:portrait-arrive .8s .1s both cubic-bezier(.22,1,.36,1)}
+  html[data-theme] .motion-pending{opacity:0;transform:translateY(22px)}
+  html[data-theme] .motion-visible{animation:section-arrive .65s var(--motion-delay,0ms) both cubic-bezier(.22,1,.36,1)}
+  html[data-theme] .soft-project-flip-toggle svg{transition:transform .32s cubic-bezier(.22,1,.36,1)}
+  html[data-theme] .soft-project-flip-toggle:hover svg{transform:rotate(-38deg)}
+  html[data-theme] .soft-project-card.is-flipped .soft-project-flip-toggle svg{transform:rotate(180deg)}
+  html[data-theme] .soft-hero-actions a svg,
+  html[data-theme] .nav-contact svg,
+  html[data-theme] .contact-button svg,
+  html[data-theme] .case-detail-contact svg{transition:transform .25s cubic-bezier(.22,1,.36,1)}
+  html[data-theme] .soft-hero-actions a:hover svg,
+  html[data-theme] .nav-contact:hover svg,
+  html[data-theme] .contact-button:hover svg,
+  html[data-theme] .case-detail-contact:hover svg{transform:translate(3px,-3px)}
+  html[data-theme] .filters button,html[data-theme] .theme-toggle,
+  html[data-theme] .lang-switch button{transition:color .22s ease,background-color .22s ease,transform .22s ease,border-color .22s ease}
+  html[data-theme] .filters button:hover:not(.selected){transform:translateY(-2px);background:var(--surface-quiet)}
+  html[data-theme] .theme-toggle:hover {transform:translateY(-2px)}
+  html[data-theme] .career-entry{transition:padding-left .3s ease,border-color .3s ease}
+  html[data-theme] .career-entry:hover{padding-left:8px;border-color:var(--slate)}
+  html[data-theme] .career-entry::before{transition:transform .3s ease,background-color .3s ease}
+  html[data-theme] .career-entry:hover::before{transform:scale(1.45);background:var(--slate)}
+  html[data-theme] .expertise-card{transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s ease,box-shadow .3s ease}
+  html[data-theme] .related-case-study-card:hover{transform:translateY(-5px)}
+  html[data-theme] .social-links a svg{transition:transform .22s ease}
+  html[data-theme] .social-links a:hover svg{transform:translateY(-3px)}
+  html[data-theme] .soft-portrait img{transition:transform .65s cubic-bezier(.22,1,.36,1)}
+  html[data-theme] .soft-portrait:hover img{transform:scale(1.025)}
+  @keyframes hero-arrive{from{opacity:0;transform:translateY(19px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes portrait-arrive{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes section-arrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+}
+html[data-theme] .lang-switch{
+  display:inline-flex;align-items:center;gap:2px;
+  background:var(--surface-quiet);border:1px solid var(--rule);
+  border-radius:11px;padding:3px;flex-shrink:0;
+}
+html[data-theme] .lang-switch button{
+  min-width:37px;min-height:36px;display:inline-flex;align-items:center;justify-content:center;
+  padding:6px 8px;color:var(--muted-ink);font-size:11px;font-weight:750;
+  border:0;border-radius:8px;background:transparent;cursor:pointer;
+}
+html[data-theme] .lang-switch button[aria-pressed="true"]{background:var(--slate);color:var(--paper)}
+html[data-theme] .lang-switch button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:640px){
+  html[data-theme] .lang-switch{gap:0;padding:2px}
+  html[data-theme] .lang-switch button{min-width:31px;min-height:34px;padding:5px;font-size:10px}
+  html[data-theme] .header-actions{gap:7px}
+}
+@media(prefers-reduced-motion:reduce){
+  html[data-theme] .motion-pending,html[data-theme] .motion-visible{opacity:1;transform:none;animation:none}
+  html[data-theme] .soft-hero-copy > *,html[data-theme] .soft-portrait{animation:none}
+  html[data-theme] .career-entry:hover{padding-left:0}
+  html[data-theme] .social-links a:hover svg{transform:none}
+}

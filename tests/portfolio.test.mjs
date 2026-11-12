@@ -98,3 +98,49 @@ test('light mode is the default on every page load, dark mode still toggles', ()
   assert.ok(src.includes("onClick={()=>setTheme(theme==='dark'?'light':'dark')}"));
   assert.ok(src.includes("theme==='dark'?'#111B27':'#F7F9FB'"));
 });
+
+test('contact email and AnaKuEducare work experience are correct', () => {
+  const homepage = read('src/main.jsx');
+  const legacy = read('html/index.html');
+  assert.ok(homepage.includes("const contactEmail='marcellowilliamwijaya@gmail.com'"));
+  assert.ok(homepage.includes('<h4>AnaKuEducare</h4><span>JAN 2022 — FEB 2023</span>'));
+  assert.ok(homepage.includes('Social Media Marketing'));
+  for (const content of [homepage, legacy]) {
+    assert.ok(!content.includes('marcellowilliam74@gmail.com'), 'outdated contact email');
+  }
+  assert.ok(!homepage.includes('Education company (name omitted)'));
+});
+
+test('EN and ID language switch translates portfolio UI and project details', async () => {
+  const { translate, availableLanguages } = await import('../src/i18n.js');
+  assert.deepEqual(availableLanguages, ['en','id']);
+  assert.equal(translate('Home','en'),'Home');
+  assert.equal(translate('Home','id'),'Beranda');
+  assert.equal(translate('About this project','id'),'Tentang proyek ini');
+  assert.equal(translate('A learning-center website introducing AnaKu Baca Tulis, its teaching approach, and information for parents.','id').startsWith('Website lembaga pendidikan'),true);
+  assert.equal(translate('Previously unseen proper name','id'),'Previously unseen proper name');
+
+  const main=read('src/main.jsx');
+  const caseStudy=read('src/ProjectCaseStudy.jsx');
+  const engineering=read('src/EngineeringProfile.jsx');
+  const flip=read('src/ProjectFlipCard.jsx');
+  assert.ok(main.includes('const [language,setLanguage]'));
+  assert.ok(main.includes('document.documentElement.lang=language'));
+  assert.ok(main.includes('className="lang-switch"'));
+  assert.ok(caseStudy.includes('onLanguageChange'));
+  assert.ok(engineering.includes('EngineeringSkills({language='));
+  assert.ok(flip.includes('t(description,language)'));
+});
+test('animation enhancements stay accessible and respect reduced motion', () => {
+  const motion=read('src/motion.css');
+  const main=read('src/main.jsx');
+  const hook=read('src/usePortfolioMotion.js');
+  assert.match(motion,/\.motion-visible/);
+  assert.match(motion,/\.header::after/);
+  assert.match(motion,/\.career-entry:hover/);
+  assert.match(motion,/prefers-reduced-motion:reduce/);
+  assert.match(hook,/IntersectionObserver/);
+  assert.match(hook,/MutationObserver/);
+  assert.match(hook,/passive: true/);
+  assert.match(main,/usePortfolioMotion\(caseStudySlug\)/);
+});
