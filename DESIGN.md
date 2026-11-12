@@ -1,37 +1,35 @@
-# Design direction: Soft Modern Engineer
+# Design direction: Soft Slate & Navy
 
-This is a portfolio for Marcello William Wijaya. It needs to show credible professional software work in a friendly, approachable layout, not imitate a generic SaaS landing page.
+Portfolio for Marcello William Wijaya. It should remain a personal, approachable presentation of real software work rather than a generic startup template.
 
-## Direction chosen
+## Chosen palette
 
-The selected reference is a warm cream, sage and terracotta composition with an expressive portrait, clear project navigation, rounded corners and comfortable whitespace. The interface does not use gradients, glass backgrounds, or large decorative glows.
+The user selected Soft Slate & Navy as a modern minimal alternative. Flat colors only, no gradient or glow.
 
-Core colors:
-- Cream: #f7f5f0
-- Charcoal: #222725
-- Sage: #687d64
-- Terracotta: #b75d40
-- Quiet neutral: #e9ede5
+| Token | Light | Dark |
+| --- | --- | --- |
+| Background | #F7F9FB | #111B27 |
+| Primary text | #202934 | #F0F5F9 |
+| Accent | #506B80 | #B9D3E6 |
+| Surface | #FFFFFF | #1C2B3B |
+| Soft surface | #E8EEF2 | #26394B |
+| Border | #D8E2E9 | #3F5365 |
+| Muted text | #52687A | #C1CFD9 |
 
-Manrope handles headlines, navigation, and body text. DM Mono is reserved for compact factual metadata. Light is the default; dark mode remains available.
+The design relies on cool off-white, deep navy, and restrained slate-blue. Avoid warm terracotta, green, neon, gradients and rainbow project cards. Manrope is the main font, DM Mono is only for narrow metadata.
 
-## Content hierarchy
+## Composition and existing features
 
-Hero: identity and personal expertise, real photo and CV.
-Work: four public company profiles first, followed by personal and professional projects, then earlier design exploration.
-Project detail: what the site or application does, implementation details that are supported by the source, and a live link where available.
-About and contact: verified professional profile, resume and clear contact options.
+Maintain the portrait-led hero, project search, category filters, four public company profiles and all prior project cards. Maintain working light/dark modes, case-study navigation, company website links, CV download, contact methods and mobile navigation. Do not expose private source repositories.
 
-## Motion
+## Motion and accessibility
 
-Cards rotate to reveal details on hover only when the pointing device supports hover. Native toggle buttons provide touch and keyboard access. Reduced-motion support must remove transitions without hiding functionality. Buttons react to hover and press with restrained translations.
+Project cards flip on pointer hover and via accessible native toggle button for touch and keyboard. Retain reduced-motion support and scrollable card backs for long descriptions. Buttons and controls receive gentle hover feedback without endless animation. Keep focus indicators visible and accessible touch targets.
 
-## Quality rules
+## Content
 
-- Every project claim must be grounded in provided source or clearly qualified as conceptual.
-- Do not create fictitious metrics, testimonials, customer logos, or screenshots.
-- Keep private repository links out of client-side data.
-- Flat colors only. Maintain the light and dark variants.
-- No horizontal overflow at 320px. All interactive targets must remain reachable using keyboard and touch.
-- Prefer simple components and data files over adding more unrelated dependencies.
-- Test search/filter, card flip, deep-link case studies, contact, CV and metadata before release.
+Descriptions, links and outcomes must be grounded in real project facts; no fictitious metrics or screenshots. Project illustrations are typographic concepts, not screenshots of deployed products.
+
+## Quality gate
+
+Execute test and production build before release, validate that no CSS gradients have been introduced, check the new palette tokens in both light and dark, and verify the Vercel deployment SHA. Browser visual review and accessibility scanning are separate checks and should not be claimed without execution.
