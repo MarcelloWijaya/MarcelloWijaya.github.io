@@ -44,3 +44,10 @@ Light mode is selected on each fresh page load, regardless of any previously sav
 - Motion includes staggered hero entrance, scroll reveal of below-the-fold sections, subtle hover motion on buttons, cards and career entries, and an unobtrusive scroll progress line.
 - Never add continuous decorative loops, aggressive parallax, gradient effects, scroll jacking or motion that blocks keyboard and touch usage.
 - Support `prefers-reduced-motion: reduce` and keep all content visible if intersection observation is unavailable.
+
+## Visual identity: MWW
+
+- **01 Clean Type**: inline scalable, readable MWW lettermark in the navbar, case-study header and footer. It adapts automatically to both theme color systems.
+- **03 Compact**: navy-square favicon with a white M and two smaller slate-blue Ws, distributed as `public/assets/mww-favicon.svg`.
+- Keep identity flat, minimal and crisp, with no gradient, orbit, glow, icon-font substitution or reliance on a network image. Avoid reusing the old `marcello.` wordmark.
+- Ensure labels remain understandable to assistive technology, and preserve navbar space at mobile/tablet widths.

@@ -144,3 +144,26 @@ test('animation enhancements stay accessible and respect reduced motion', () => 
   assert.match(hook,/passive: true/);
   assert.match(main,/usePortfolioMotion\(caseStudySlug\)/);
 });
+
+test('MWW wordmark is used consistently and compact icon replaces legacy favicon', () => {
+  const main=read('src/main.jsx');
+  const detail=read('src/ProjectCaseStudy.jsx');
+  const brand=read('src/BrandMark.jsx');
+  const favicon=read('public/assets/mww-favicon.svg');
+  const html=read('index.html');
+  const styles=read('src/soft-human.css');
+
+  assert.ok(main.includes("import { BrandMark } from './BrandMark'"));
+  assert.equal((main.match(/<BrandMark\s*\/>/g)||[]).length,2,'Header and footer wordmark');
+  assert.match(detail, /<BrandMark\s*\/>/);
+  assert.ok(!main.includes('marcello<span>.</span>'));
+  assert.ok(!detail.includes('marcello<span>.</span>'));
+  assert.match(brand,/viewBox="0 0 216 62"/);
+  assert.match(brand,/className="mww-dot"/);
+  assert.match(favicon,/viewBox="0 0 96 96"/);
+  assert.match(favicon,/<rect width="96" height="96" rx="20" fill="#202934"/);
+  assert.ok(html.includes('rel="icon" type="image/svg+xml" href="/assets/mww-favicon.svg"'));
+  assert.match(styles,/\.mww-wordmark/);
+  assert.match(styles,/var\(--ink\)/);
+  assert.match(styles,/prefers-reduced-motion:no-preference/);
+});

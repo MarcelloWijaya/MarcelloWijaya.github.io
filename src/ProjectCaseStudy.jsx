@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, Check, Copy, Moon, Sun } from 'lucide-react';
 import './project-case-study.css';
 import { companyProfiles } from './data/companyProfiles';
+import { BrandMark } from './BrandMark';
 import { t } from './i18n';
 
 const caseStudies = {
@@ -399,7 +400,7 @@ export function ProjectCaseStudy({ slug, language='en', onLanguageChange, theme,
     <a className="skip-link" href="#case-detail-main">{t("Skip to case study",language)}</a>
     <header className="header">
       <div className="shell case-detail-header">
-        <a className="brand" href="/#home" aria-label="Marcello home">marcello<span>.</span></a>
+        <a className="brand" href="/#home" aria-label="Marcello home"><BrandMark/></a>
         <div className="case-detail-header-actions"><div className="lang-switch" role="group" aria-label="Language / Bahasa">{["en","id"].map(code=><button key={code} type="button" lang={code} aria-label={code==="en"?"Switch to English":"Ganti ke Bahasa Indonesia"} aria-pressed={language===code} onClick={()=>onLanguageChange(code)}>{code.toUpperCase()}</button>)}</div>
           <a className="case-detail-back" href="/#work">{t("All projects",language)} <ArrowUpRight size={14} aria-hidden="true"/></a>
           <button type="button" className="theme-toggle" aria-label={t(theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',language)} aria-pressed={theme === 'light'} onClick={onToggleTheme}>
