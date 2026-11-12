@@ -16,6 +16,7 @@ export function ProjectFlipCard({
   points = [],
   technologies = [],
   href,
+  siteUrl,
   hrefLabel = 'View project',
   frontArt,
   index,
@@ -67,7 +68,7 @@ export function ProjectFlipCard({
                 <div className="soft-technology-list">
                   {technologies.slice(0, 3).map(tech => <span key={tech}>{tech}</span>)}
                 </div>
-                <span className="soft-project-hint">Flip for details <ArrowUpRight size={15} aria-hidden="true"/></span>
+                <span className="soft-project-hint">Use flip button for details <ArrowUpRight size={15} aria-hidden="true"/></span>
               </div>
             </div>
           </div>
@@ -92,6 +93,7 @@ export function ProjectFlipCard({
               ) : (
                 <span className="soft-project-unavailable">Work in progress</span>
               )}
+              {siteUrl && <a className="soft-project-live-link" href={siteUrl} target="_blank" rel="noopener noreferrer">Visit live website <ArrowUpRight size={16} aria-hidden="true"/></a>}
             </div>
           </div>
         </div>
