@@ -272,3 +272,90 @@ html[data-theme] .soft-project-back:focus-visible{
  html[data-theme] .soft-project-back-label{font-size:11px}
  html[data-theme] .soft-project-visit{min-height:44px}
 }
+
+/* Final palette details: consistent contrasts across app and case studies. */
+html[data-theme] .case-detail-summary,
+html[data-theme] .case-detail-section > .case-detail-intro,
+html[data-theme] .case-detail-note,
+html[data-theme] .related-case-study-card > p {
+  color:var(--muted-ink);
+}
+html[data-theme] .case-detail-page h1,
+html[data-theme] .case-detail-meta strong,
+html[data-theme] .case-detail-section > h2,
+html[data-theme] .related-case-study-card h3 {
+  color:var(--ink);
+}
+html[data-theme] .case-detail-status,
+html[data-theme] .related-case-study-status,
+html[data-theme] .case-detail-meta span {
+  color:var(--slate);
+}
+html[data-theme] .case-detail-note {
+  background:var(--surface-quiet);
+  border-color:var(--slate);
+}
+html[data-theme] .case-detail-section li,
+html[data-theme] .related-case-study-card {
+  background:var(--surface);
+  border-color:var(--rule);
+  color:var(--ink);
+}
+html[data-theme] .case-detail-section li::before,
+html[data-theme] .related-case-study-link,
+html[data-theme] .case-detail-section li::marker,
+html[data-theme] .case-detail-copy-status {
+  color:var(--slate);
+}
+html[data-theme] .case-detail-section,
+html[data-theme] .case-detail-meta > div,
+html[data-theme] .case-detail-related,
+html[data-theme] .case-detail-status {
+  border-color:var(--rule);
+}
+html[data-theme] .case-detail-stack span {
+  background:var(--surface-quiet);
+  color:var(--ink);
+  border-color:var(--rule);
+}
+html[data-theme] .related-case-study-card:hover {border-color:var(--slate)}
+html[data-theme] .case-detail-contact,
+html[data-theme] .case-detail-live-link {background:var(--slate);color:var(--paper)}
+html[data-theme] .case-detail-contact:hover,
+html[data-theme] .case-detail-live-link:hover {background:var(--accent);color:var(--accent-ink)}
+html[data-theme] .case-detail-share {color:var(--ink);border-color:var(--rule)}
+html[data-theme] .case-detail-back,
+html[data-theme] .case-detail-kicker > a {color:var(--muted-ink)}
+html[data-theme] .case-detail-back:hover,
+html[data-theme] .case-detail-kicker > a:hover,
+html[data-theme] .related-case-study-link:hover {color:var(--slate)}
+html[data-theme] .profile-facts span,
+html[data-theme] .profile-facts small,
+html[data-theme] .career-entry .experience-title > span {color:var(--muted-ink)}
+html[data-theme] .profile-facts strong {color:var(--ink)}
+html[data-theme] .expertise-card h3,
+html[data-theme] .soft-project-front h3 {color:var(--ink)}
+html[data-theme] .soft-project-front,
+html[data-theme] .soft-project-back {background:var(--surface)}
+html[data-theme] .soft-project-back {background:var(--surface-quiet)}
+html[data-theme] .soft-project-illustration {background:var(--surface-quiet)}
+html[data-theme] .soft-window-row.wide {background:var(--slate)}
+html[data-theme] .soft-project-points li::marker {color:var(--slate)}
+html[data-theme] .soft-project-visit {background:var(--slate);color:var(--paper)}
+html[data-theme] .soft-project-visit:hover {background:var(--accent);color:var(--accent-ink)}
+html[data-theme] .soft-project-flip-toggle:hover {background:var(--slate);color:var(--paper)}
+html[data-theme] .soft-project-hint {color:var(--slate)}
+html[data-theme] .nav-contact:hover,
+html[data-theme] .contact-button:hover {background:var(--stripe);color:#FFFFFF}
+html[data-theme] .soft-project-kicker,
+html[data-theme] .soft-project-back-label {color:var(--slate)}
+html[data-theme] .soft-project-stack {color:var(--muted-ink)}
+html[data-theme] .soft-hero-primary:hover {background:var(--stripe);color:#FFFFFF}
+html[data-theme="dark"] .soft-hero-primary:hover,
+html[data-theme="dark"] .soft-project-flip-toggle:hover,
+html[data-theme="dark"] .soft-project-visit:hover {background:#D8E7F2;color:#111B27}
+html[data-theme] .skills-strip > div {color:var(--slate)}
+html[data-theme] .skills-strip span {color:var(--accent)}
+html[data-theme] a:focus-visible,
+html[data-theme] button:focus-visible,
+html[data-theme] input:focus-visible {outline-color:var(--accent)}
