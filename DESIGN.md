@@ -33,3 +33,7 @@ Descriptions, links and outcomes must be grounded in real project facts; no fict
 ## Quality gate
 
 Execute test and production build before release, validate that no CSS gradients have been introduced, check the new palette tokens in both light and dark, and verify the Vercel deployment SHA. Browser visual review and accessibility scanning are separate checks and should not be claimed without execution.
+
+## Default theme behavior
+
+Light mode is selected on each fresh page load, regardless of any previously saved browser preference. Dark mode is still available through the toggle for the current page session; refreshing the page returns to Light Mode. The browser theme-color tracks the active theme.
