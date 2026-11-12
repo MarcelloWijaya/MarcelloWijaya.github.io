@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, Check, Copy, Moon, Sun } from 'lucide-react';
 import './project-case-study.css';
 import { companyProfiles } from './data/companyProfiles';
+import { t } from './i18n';
 
 const caseStudies = {
   dearly: {
@@ -366,7 +367,7 @@ const getRelatedProjects = (currentSlug, currentProject) => {
     .slice(0, 3);
 };
 
-export function ProjectCaseStudy({ slug, theme, onToggleTheme }) {
+export function ProjectCaseStudy({ slug, language='en', onLanguageChange, theme, onToggleTheme }) {
   const project = caseStudies[slug];
   const [copyStatus, setCopyStatus] = useState('');
 
@@ -395,15 +396,15 @@ export function ProjectCaseStudy({ slug, theme, onToggleTheme }) {
   const relatedProjects = getRelatedProjects(slug, project);
 
   return <div className="case-detail-shell">
-    <a className="skip-link" href="#case-detail-main">Skip to case study</a>
+    <a className="skip-link" href="#case-detail-main">{t("Skip to case study",language)}</a>
     <header className="header">
       <div className="shell case-detail-header">
         <a className="brand" href="/#home" aria-label="Marcello home">marcello<span>.</span></a>
-        <div className="case-detail-header-actions">
-          <a className="case-detail-back" href="/#work">All projects <ArrowUpRight size={14} aria-hidden="true"/></a>
-          <button type="button" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} aria-pressed={theme === 'light'} onClick={onToggleTheme}>
+        <div className="case-detail-header-actions"><div className="lang-switch" role="group" aria-label="Language / Bahasa">{["en","id"].map(code=><button key={code} type="button" lang={code} aria-label={code==="en"?"Switch to English":"Ganti ke Bahasa Indonesia"} aria-pressed={language===code} onClick={()=>onLanguageChange(code)}>{code.toUpperCase()}</button>)}</div>
+          <a className="case-detail-back" href="/#work">{t("All projects",language)} <ArrowUpRight size={14} aria-hidden="true"/></a>
+          <button type="button" className="theme-toggle" aria-label={t(theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',language)} aria-pressed={theme === 'light'} onClick={onToggleTheme}>
             {theme === 'dark' ? <Sun size={16} aria-hidden="true"/> : <Moon size={16} aria-hidden="true"/>}
-            <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            <span>{t(theme === 'dark' ? 'Light' : 'Dark',language)}</span>
           </button>
         </div>
       </div>
@@ -411,52 +412,52 @@ export function ProjectCaseStudy({ slug, theme, onToggleTheme }) {
     <main id="case-detail-main">
       <article className="case-detail-page section shell">
         <div className="case-detail-kicker">
-          <a href="/#work">← Back to all projects</a>
-          <span className="eyebrow">PROJECT CASE STUDY</span>
+          <a href="/#work">← {t("Back to all projects",language)}</a>
+          <span className="eyebrow">{t("PROJECT CASE STUDY",language)}</span>
         </div>
-        <p className="case-detail-status">{project.status}</p>
+        <p className="case-detail-status">{t(project.status,language)}</p>
         <h1>{project.title}</h1>
-        <p className="case-detail-summary">{project.summary}</p>
-        {project.siteUrl && <a className="case-detail-live-link" href={project.siteUrl} target="_blank" rel="noopener noreferrer">Visit live company website <ArrowUpRight size={17} aria-hidden="true"/></a>}
+        <p className="case-detail-summary">{t(project.summary,language)}</p>
+        {project.siteUrl && <a className="case-detail-live-link" href={project.siteUrl} target="_blank" rel="noopener noreferrer">{t("Visit live company website",language)} <ArrowUpRight size={17} aria-hidden="true"/></a>}
         <div className="case-detail-meta">
-          <div><span>ROLE</span><strong>{project.role}</strong></div>
-          <div><span>FORMAT</span><strong>{project.format}</strong></div>
-          <div><span>STATUS</span><strong>{project.statusDetail}</strong></div>
+          <div><span>{t("ROLE",language)}</span><strong>{t(project.role,language)}</strong></div>
+          <div><span>{t("FORMAT",language)}</span><strong>{t(project.format,language)}</strong></div>
+          <div><span>{t("STATUS",language)}</span><strong>{t(project.statusDetail,language)}</strong></div>
         </div>
         {project.sections.map(section => <section className="case-detail-section" key={section.label}>
-          <p className="eyebrow">{section.label}</p>
-          <h2>{section.title}</h2>
-          <p className="case-detail-intro">{section.intro}</p>
-          <ul>{section.points.map(point => <li key={point}>{point}</li>)}</ul>
+          <p className="eyebrow">{t(section.label,language)}</p>
+          <h2>{t(section.title,language)}</h2>
+          <p className="case-detail-intro">{t(section.intro,language)}</p>
+          <ul>{section.points.map(point => <li key={point}>{t(point,language)}</li>)}</ul>
         </section>)}
         <section className="case-detail-section">
-          <p className="eyebrow">TECH STACK</p>
-          <h2>Tools used</h2>
+          <p className="eyebrow">{t("TECH STACK",language)}</p>
+          <h2>{t("Tools used",language)}</h2>
           <div className="case-detail-stack">{project.stack.map(item => <span key={item}>{item}</span>)}</div>
         </section>
-        <p className="case-detail-note">{project.note}</p>
+        <p className="case-detail-note">{t(project.note,language)}</p>
         {relatedProjects.length > 0 && <section className="case-detail-related" aria-labelledby="related-case-studies-title">
-          <p className="eyebrow">KEEP EXPLORING</p>
-          <h2 id="related-case-studies-title">Related case studies</h2>
+          <p className="eyebrow">{t("KEEP EXPLORING",language)}</p>
+          <h2 id="related-case-studies-title">{t("Related case studies",language)}</h2>
           <div className="related-case-study-grid">
             {relatedProjects.map(({ slug: relatedSlug, project: relatedProject }) => <a className="related-case-study-card" key={relatedSlug} href={'#case-study/' + relatedSlug} aria-label={`View case study: ${relatedProject.title}`}>
-              <span className="related-case-study-status">{relatedProject.status}</span>
+              <span className="related-case-study-status">{t(relatedProject.status,language)}</span>
               <h3>{relatedProject.title}</h3>
-              <p>{relatedProject.summary}</p>
-              <span className="related-case-study-link">View case study <ArrowUpRight size={14} aria-hidden="true"/></span>
+              <p>{t(relatedProject.summary,language)}</p>
+              <span className="related-case-study-link">{t("View case study",language)} <ArrowUpRight size={14} aria-hidden="true"/></span>
             </a>)}
           </div>
         </section>}
         <div className="case-detail-footer">
-          <a className="case-detail-back" href="/#work">← Explore all projects</a>
-          <button type="button" className="case-detail-share" aria-label="Copy case study link" onClick={handleCopyLink}>
+          <a className="case-detail-back" href="/#work">← {t("Explore all projects",language)}</a>
+          <button type="button" className="case-detail-share" aria-label={t("Copy case study link",language)} onClick={handleCopyLink}>
             {copyStatus === 'copied' ? <Check size={15} aria-hidden="true"/> : <Copy size={15} aria-hidden="true"/>}
-            <span>{copyStatus === 'copied' ? 'Copied' : copyStatus === 'failed' ? 'Try again' : 'Copy link'}</span>
+            <span>{t(copyStatus === 'copied' ? 'Copied' : copyStatus === 'failed' ? 'Try again' : 'Copy link',language)}</span>
           </button>
           <span className="case-detail-copy-status" role="status" aria-live="polite">
-            {copyStatus === 'copied' ? 'Link copied to clipboard.' : copyStatus === 'failed' ? 'Could not copy link. You can copy it from the address bar.' : ''}
+            {t(copyStatus === 'copied' ? 'Link copied to clipboard.' : copyStatus === 'failed' ? 'Could not copy link. You can copy it from the address bar.' : '',language)}
           </span>
-          <a className="case-detail-contact" href="/#contact">Get in touch <ArrowUpRight size={16} aria-hidden="true"/></a>
+          <a className="case-detail-contact" href="/#contact">{t("Get in touch",language)} <ArrowUpRight size={16} aria-hidden="true"/></a>
         </div>
       </article>
     </main>
