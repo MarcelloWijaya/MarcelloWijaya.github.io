@@ -37,3 +37,10 @@ Execute test and production build before release, validate that no CSS gradients
 ## Default theme behavior
 
 Light mode is selected on each fresh page load, regardless of any previously saved browser preference. Dark mode is still available through the toggle for the current page session; refreshing the page returns to Light Mode. The browser theme-color tracks the active theme.
+
+## Interactive motion and bilingual interface
+
+- EN is the default language; ID is an explicit user-selectable translation, and the page `lang` attribute changes accordingly.
+- Motion includes staggered hero entrance, scroll reveal of below-the-fold sections, subtle hover motion on buttons, cards and career entries, and an unobtrusive scroll progress line.
+- Never add continuous decorative loops, aggressive parallax, gradient effects, scroll jacking or motion that blocks keyboard and touch usage.
+- Support `prefers-reduced-motion: reduce` and keep all content visible if intersection observation is unavailable.
