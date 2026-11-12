@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
 import { companyProfiles } from '../src/data/companyProfiles.js';
 
 const read = (path) => readFileSync(new URL('../' + path, import.meta.url), 'utf8');
@@ -73,4 +72,18 @@ test('portfolio includes contact links and downloadable CV', () => {
   assert.ok(src.includes('mailto:'));
   assert.ok(src.includes('LinkedIn'));
   assert.ok(src.includes('/assets/Marcello-Wijaya-CV.pdf'));
+});
+
+test('Soft Slate & Navy tokens exist consistently in light and dark themes', () => {
+  for (const file of ['src/editorial-theme.css', 'src/soft-human.css']) {
+    const css = read(file);
+    for (const value of ['#F7F9FB', '#202934', '#506B80', '#E8EEF2', '#111B27', '#F0F5F9', '#B9D3E6', '#1C2B3B']) {
+      assert.ok(css.includes(value), `${file} missing ${value}`);
+    }
+    assert.ok(!css.includes('var(--sage)'), `${file} includes obsolete green theme token`);
+  }
+  assert.ok(read('index.html').includes('name="theme-color" content="#F7F9FB"'));
+  const primary = read('src/soft-human.css');
+  assert.match(primary, /\.soft-project-card\.is-flipped \.soft-project-rotator\s*\{transform:rotateY\(180deg\)\}/);
+  assert.match(primary, /prefers-reduced-motion:reduce/);
 });
