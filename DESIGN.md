@@ -1,22 +1,22 @@
-# Design direction: Soft Slate & Navy
+# Design direction: Graphite & Titanium
 
 Portfolio for Marcello William Wijaya. It should remain a personal, approachable presentation of real software work rather than a generic startup template.
 
 ## Chosen palette
 
-The user selected Soft Slate & Navy as a modern minimal alternative. Flat colors only, no gradient or glow.
+The user selected Graphite & Titanium as a more masculine and minimalist direction. Flat colors only, no gradient or glow.
 
 | Token | Light | Dark |
 | --- | --- | --- |
-| Background | #F7F9FB | #111B27 |
-| Primary text | #202934 | #F0F5F9 |
-| Accent | #506B80 | #B9D3E6 |
-| Surface | #FFFFFF | #1C2B3B |
-| Soft surface | #E8EEF2 | #26394B |
-| Border | #D8E2E9 | #3F5365 |
-| Muted text | #52687A | #C1CFD9 |
+| Background | #F5F6F7 | #15191D |
+| Primary text | #202428 | #F3F5F6 |
+| Accent | #586873 | #B8C5CD |
+| Surface | #FFFFFF | #232B31 |
+| Soft surface | #E5E9EC | #2B353C |
+| Border | #D8DEE2 | #46535C |
+| Muted text | #58646D | #C7D0D6 |
 
-The design relies on cool off-white, deep navy, and restrained slate-blue. Avoid warm terracotta, green, neon, gradients and rainbow project cards. Manrope is the main font, DM Mono is only for narrow metadata.
+The design relies on clean off-white, deep graphite, and restrained titanium grey. Avoid saturated accent colors, neon, gradients and rainbow project cards. Manrope is the main font, DM Mono is only for narrow metadata.
 
 ## Composition and existing features
 
@@ -48,6 +48,6 @@ Light mode is selected on each fresh page load, regardless of any previously sav
 ## Visual identity: MWW
 
 - **01 Clean Type**: inline scalable, readable MWW lettermark in the navbar, case-study header and footer. It adapts automatically to both theme color systems.
-- **03 Compact**: navy-square favicon with a white M and two smaller slate-blue Ws, distributed as `public/assets/mww-favicon.svg`.
+- **03 Compact**: graphite-square favicon with a white M and two smaller titanium-grey Ws, distributed as `public/assets/mww-favicon.svg`.
 - Keep identity flat, minimal and crisp, with no gradient, orbit, glow, icon-font substitution or reliance on a network image. Avoid reusing the old `marcello.` wordmark.
 - Ensure labels remain understandable to assistive technology, and preserve navbar space at mobile/tablet widths.

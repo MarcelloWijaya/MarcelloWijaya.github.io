@@ -1,33 +1,33 @@
 /*
- * Editorial Engineering — Marcello portfolio
+ * Graphite & Titanium — MWW portfolio
  * Flat colours only. Visual hierarchy comes from type, rules, and spacing,
  * not gradients, glow effects, or floating decorative elements.
  */
 :root,
 html[data-theme="light"] {
-  --paper:#F7F9FB;
-  --ink:#202934;
-  --muted-ink:#52687A;
-  --rule:#D8E2E9;
+  --paper:#F5F6F7;
+  --ink:#202428;
+  --muted-ink:#58646D;
+  --rule:#D8DEE2;
   --surface:#FFFFFF;
-  --surface-quiet:#E8EEF2;
-  --accent:#506B80;
+  --surface-quiet:#E5E9EC;
+  --accent:#586873;
   --accent-ink:#FFFFFF;
-  --stripe:#24384C;
-  --slate:#506B80;
+  --stripe:#2A3136;
+  --slate:#586873;
   color-scheme:light;
 }
 html[data-theme="dark"] {
-  --paper:#111B27;
-  --ink:#F0F5F9;
-  --muted-ink:#C1CFD9;
-  --rule:#3F5365;
-  --surface:#1C2B3B;
-  --surface-quiet:#26394B;
-  --accent:#B9D3E6;
-  --accent-ink:#111B27;
-  --stripe:#172737;
-  --slate:#B9D3E6;
+  --paper:#15191D;
+  --ink:#F3F5F6;
+  --muted-ink:#C7D0D6;
+  --rule:#46535C;
+  --surface:#232B31;
+  --surface-quiet:#2B353C;
+  --accent:#B8C5CD;
+  --accent-ink:#15191D;
+  --stripe:#20282E;
+  --slate:#B8C5CD;
   color-scheme:dark;
 }
 html,
@@ -109,7 +109,7 @@ html[data-theme] .photo-symbol { display: none; }
 /* Flat, high-contrast information strip. */
 html[data-theme] .skills-strip {
   background: var(--stripe);
-  color: #F7F9FB;
+  color: #F5F6F7;
   margin-top: 30px;
   padding: 23px 16px;
 }
@@ -123,7 +123,7 @@ html[data-theme] .skills-strip > div {
   font-weight: 500;
   letter-spacing: .055em;
 }
-html[data-theme] .skills-strip span { color: #B9D3E6; font-size: 14px; }
+html[data-theme] .skills-strip span { color: #B8C5CD; font-size: 14px; }
 
 /* Sections and project work: typographic hierarchy over decoration. */
 html[data-theme] .section { padding-top: 88px; padding-bottom: 88px; }
@@ -157,22 +157,22 @@ html[data-theme] .project-search-clear:hover { color: var(--accent); }
 html[data-theme] .project-art {
   border-radius: 0;
   transition: none;
-  color: #24384C;
+  color: #2A3136;
 }
 html[data-theme] .project-visual { border-radius: 0; }
 html[data-theme] .project-visual:hover .project-art { transform: none; }
-.lime { background: #DEE8EF; }
-.peach { background: #D5E2EB; }
-.lavender { background: #C8DBE7; }
-.blue { background: #D0E1EB; }
-.pink { background: #C9D8E4; }
-.silver { background: #E0E7ED; }
+.lime { background: #DDE3E7; }
+.peach { background: #D9DFE3; }
+.lavender { background: #CDD6DC; }
+.blue { background: #D5DEE3; }
+.pink { background: #D0D9DE; }
+.silver { background: #E1E5E8; }
 html[data-theme] .art-headline { font-weight: 650; }
-html[data-theme] .ticket { border: 1px solid #475248; border-radius: 0; background: #F7F9FB; box-shadow: none; }
-html[data-theme] .orb { border-radius: 1px; background: #7C9BB1; box-shadow: none; }
-html[data-theme] .lavender .orb { background: #688CA5; }
+html[data-theme] .ticket { border: 1px solid #465158; border-radius: 0; background: #F5F6F7; box-shadow: none; }
+html[data-theme] .orb { border-radius: 1px; background: #82929C; box-shadow: none; }
+html[data-theme] .lavender .orb { background: #85888C; }
 html[data-theme] .play-disc { border-radius: 1px; box-shadow: none; }
-html[data-theme] .project-open { border-radius: 2px; background: #24384C; color: #fff; }
+html[data-theme] .project-open { border-radius: 2px; background: #2A3136; color: #FFF; }
 html[data-theme] .project-visual:hover .project-open { background: var(--accent); color: var(--accent-ink); }
 html[data-theme] .project-tag,
 html[data-theme] .project-status {
