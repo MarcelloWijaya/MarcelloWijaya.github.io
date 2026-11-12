@@ -359,3 +359,42 @@ html[data-theme] .skills-strip span {color:var(--accent)}
 html[data-theme] a:focus-visible,
 html[data-theme] button:focus-visible,
 html[data-theme] input:focus-visible {outline-color:var(--accent)}
+
+/* MWW visual identity: 01 Clean Type for navigation/footer.
+   Drawn as a scale-independent inline SVG, not rendered text or a raster.
+   The navy mark follows text color in light mode; near-white in dark mode. */
+html[data-theme] a.brand{
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-shrink:0;
+  width:116px;
+  height:46px;
+  line-height:1;
+  color:var(--ink);
+  text-decoration:none;
+  transition:color .23s ease,transform .23s ease;
+}
+html[data-theme] a.brand .mww-wordmark{
+  display:block;
+  width:112px;
+  height:auto;
+  flex-shrink:0;
+  overflow:visible;
+}
+html[data-theme] a.brand .mww-dot{color:var(--slate)}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  html[data-theme] a.brand:hover{transform:translateY(-2px);color:var(--slate)}
+  html[data-theme] a.brand:hover .mww-dot{color:var(--ink)}
+}
+html[data-theme] a.brand:focus-visible{
+  border-radius:5px;
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+}
+html[data-theme] footer a.brand{width:116px}
+@media(max-width:640px){
+  html[data-theme] a.brand{width:87px;height:44px}
+  html[data-theme] a.brand .mww-wordmark{width:85px}
+  html[data-theme] footer a.brand{width:87px}
+}
