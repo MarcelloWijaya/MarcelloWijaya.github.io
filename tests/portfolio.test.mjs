@@ -98,3 +98,15 @@ test('light mode is the default on every page load, dark mode still toggles', ()
   assert.ok(src.includes("onClick={()=>setTheme(theme==='dark'?'light':'dark')}"));
   assert.ok(src.includes("theme==='dark'?'#111B27':'#F7F9FB'"));
 });
+
+test('contact email and AnaKuEducare work experience are correct', () => {
+  const homepage = read('src/main.jsx');
+  const legacy = read('html/index.html');
+  assert.ok(homepage.includes("const contactEmail='marcellowilliamwijaya@gmail.com'"));
+  assert.ok(homepage.includes('<h4>AnaKuEducare</h4><span>JAN 2022 — FEB 2023</span>'));
+  assert.ok(homepage.includes('Social Media Marketing'));
+  for (const content of [homepage, legacy]) {
+    assert.ok(!content.includes('marcellowilliam74@gmail.com'), 'outdated contact email');
+  }
+  assert.ok(!homepage.includes('Education company (name omitted)'));
+});
