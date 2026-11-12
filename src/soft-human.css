@@ -253,3 +253,20 @@ html[data-theme] .soft-project-face[aria-hidden="true"]{pointer-events:none}
  html[data-theme] .case-detail-live-link{transition:none}
  html[data-theme] .case-detail-live-link:hover{transform:none}
 }
+
+/* Allow full case-study content in the scrollable back face. The front remains a concise preview. */
+html[data-theme] .soft-case-grid .soft-project-purpose,
+html[data-theme] .soft-case-grid .soft-project-points {
+  display:block;
+  overflow:visible;
+  -webkit-line-clamp:unset;
+  -webkit-box-orient:initial;
+}
+html[data-theme] .soft-project-back:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:-5px;
+}
+@media(max-width:640px) {
+ html[data-theme] .soft-project-back-label{font-size:11px}
+ html[data-theme] .soft-project-visit{min-height:44px}
+}
