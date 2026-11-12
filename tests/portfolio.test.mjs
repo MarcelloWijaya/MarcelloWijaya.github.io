@@ -87,3 +87,14 @@ test('Soft Slate & Navy tokens exist consistently in light and dark themes', () 
   assert.match(primary, /\.soft-project-card\.is-flipped \.soft-project-rotator\s*\{transform:rotateY\(180deg\)\}/);
   assert.match(primary, /prefers-reduced-motion:reduce/);
 });
+
+test('light mode is the default on every page load, dark mode still toggles', () => {
+  const html = read('index.html');
+  const src = read('src/main.jsx');
+  assert.ok(html.includes('<html lang="en" data-theme="light">'));
+  assert.ok(src.includes("const [theme,setTheme]=useState('light')"));
+  assert.ok(!html.includes('localStorage.getItem("portfolio-theme")'));
+  assert.ok(!src.includes("localStorage.getItem('portfolio-theme')"));
+  assert.ok(src.includes("onClick={()=>setTheme(theme==='dark'?'light':'dark')}"));
+  assert.ok(src.includes("theme==='dark'?'#111B27':'#F7F9FB'"));
+});
