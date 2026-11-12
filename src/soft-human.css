@@ -187,3 +187,86 @@ html[data-theme] .soft-project-face[aria-hidden="true"]{pointer-events:none}
  html[data-theme] .soft-hero-actions a:hover,
  html[data-theme] .soft-project-visit:hover{transform:none}
 }
+
+/* Company profile artwork, from verified labels rather than invented screenshots. */
+html[data-theme] .soft-project-illustration.has-company-brand {
+  background:#e1e9df;
+  border-bottom-color:var(--rule);
+}
+html[data-theme] .soft-project-illustration.tone-navy{background:#d8d9e9}
+html[data-theme] .soft-project-illustration.tone-terracotta{background:#f0d9cd}
+html[data-theme] .soft-project-illustration.tone-burgundy{background:#ecd6d8}
+html[data-theme] .soft-company-brand{position:relative;z-index:2;margin-right:auto;margin-left:24px;display:grid;gap:7px;max-width:53%}
+html[data-theme] .soft-company-brand strong{font-size:clamp(27px,3vw,43px);line-height:1;color:#22372c;letter-spacing:-.055em}
+html[data-theme] .tone-navy .soft-company-brand strong{color:#22275d}
+html[data-theme] .tone-terracotta .soft-company-brand strong{color:#8e3b29}
+html[data-theme] .tone-burgundy .soft-company-brand strong{color:#702c3c}
+html[data-theme] .soft-company-brand span{font-size:11px;line-height:1.45;font-weight:650;color:#3e4b43}
+html[data-theme] .soft-project-illustration.has-company-brand .soft-project-symbol{display:none}
+html[data-theme] .soft-project-illustration.has-company-brand .soft-project-window{right:13px;width:112px;opacity:.68}
+html[data-theme] .soft-project-illustration.has-company-brand .soft-project-number{display:none}
+/* Back face scrolls instead of hiding lengthy descriptions and CTAs. */
+html[data-theme] .soft-project-back {
+  overflow-x:hidden;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--rule) transparent;
+}
+html[data-theme] .soft-project-rotator {will-change:transform}
+html[data-theme] .soft-project-visit{flex-shrink:0}
+html[data-theme] .soft-project-live-link {
+  color:var(--sage);
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  min-height:44px;
+  padding:8px 1px;
+  font-size:12px;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+html[data-theme] .soft-project-live-link:hover{color:var(--accent)}
+html[data-theme] .case-detail-live-link {
+  display:inline-flex;align-items:center;gap:11px;
+  margin:17px 0 0;padding:14px 19px;
+  border-radius:12px;background:var(--sage);color:var(--paper);
+  font-weight:700;font-size:13px;min-height:48px;
+  transition:transform .2s ease,background-color .2s ease;
+}
+html[data-theme] .case-detail-live-link:hover{transform:translateY(-2px);background:var(--accent);color:var(--accent-ink)}
+html[data-theme] .soft-project-card:focus-within .soft-project-face{border-color:var(--sage)}
+html[data-theme] .soft-project-flip-toggle{width:48px;height:48px;bottom:12px;right:14px}
+html[data-theme] .soft-project-back .soft-project-back-footer{margin-top:18px}
+html[data-theme] .soft-project-points{flex-shrink:0}
+html[data-theme] .soft-project-face[aria-hidden="true"]{pointer-events:none}
+@media(max-width:640px){
+ html[data-theme] .soft-company-brand strong{font-size:36px}
+ html[data-theme] .soft-project-card,html[data-theme] .soft-project-card.is-archive{height:420px}
+ html[data-theme] .soft-project-front p{font-size:12px}
+ html[data-theme] .soft-project-back{padding-bottom:68px}
+ html[data-theme] .soft-project-back .soft-project-points{display:block;overflow:visible}
+}
+@media(prefers-reduced-motion:reduce) {
+ html[data-theme] .soft-project-rotator{will-change:auto}
+ html[data-theme] .case-detail-live-link{transition:none}
+ html[data-theme] .case-detail-live-link:hover{transform:none}
+}
+
+/* Allow full case-study content in the scrollable back face. The front remains a concise preview. */
+html[data-theme] .soft-case-grid .soft-project-purpose,
+html[data-theme] .soft-case-grid .soft-project-points {
+  display:block;
+  overflow:visible;
+  -webkit-line-clamp:unset;
+  -webkit-box-orient:initial;
+}
+html[data-theme] .soft-project-back:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:-5px;
+}
+@media(max-width:640px) {
+ html[data-theme] .soft-project-back-label{font-size:11px}
+ html[data-theme] .soft-project-visit{min-height:44px}
+}

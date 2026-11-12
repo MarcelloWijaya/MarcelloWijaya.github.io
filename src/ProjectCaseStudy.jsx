@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, Check, Copy, Moon, Sun } from 'lucide-react';
 import './project-case-study.css';
+import { companyProfiles } from './data/companyProfiles';
 
 const caseStudies = {
   dearly: {
@@ -294,6 +295,37 @@ const caseStudies = {
   }
 };
 
+for (const item of companyProfiles) {
+  caseStudies[item.slug] = {
+    title: item.title,
+    status: item.status,
+    summary: item.description,
+    role: item.role,
+    format: item.format,
+    statusDetail: 'Public website · Source repository private',
+    sections: [
+      {
+        label: 'THE WEBSITE',
+        title: 'What it helps visitors do',
+        intro: item.description,
+        points: item.items
+      },
+      {
+        label: 'IMPLEMENTATION',
+        title: 'How the site is structured',
+        intro: item.implementation,
+        points: [
+          'Keep the site presentation focused on the organization and the questions visitors need answered.',
+          'Make important contact and navigation paths easy to find.'
+        ]
+      }
+    ],
+    stack: item.stack,
+    siteUrl: item.siteUrl,
+    note: item.note
+  };
+}
+
 const normalizeStackName = (name) =>
   String(name || '').replace(/\s*\([^)]*\)/g, '').trim().toLocaleLowerCase();
 
@@ -366,7 +398,7 @@ export function ProjectCaseStudy({ slug, theme, onToggleTheme }) {
     <a className="skip-link" href="#case-detail-main">Skip to case study</a>
     <header className="header">
       <div className="shell case-detail-header">
-        <a className="brand" href="/#home" aria-label="Marcello home">marcello<span>®</span></a>
+        <a className="brand" href="/#home" aria-label="Marcello home">marcello<span>.</span></a>
         <div className="case-detail-header-actions">
           <a className="case-detail-back" href="/#work">All projects <ArrowUpRight size={14} aria-hidden="true"/></a>
           <button type="button" className="theme-toggle" aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} aria-pressed={theme === 'light'} onClick={onToggleTheme}>
@@ -385,6 +417,7 @@ export function ProjectCaseStudy({ slug, theme, onToggleTheme }) {
         <p className="case-detail-status">{project.status}</p>
         <h1>{project.title}</h1>
         <p className="case-detail-summary">{project.summary}</p>
+        {project.siteUrl && <a className="case-detail-live-link" href={project.siteUrl} target="_blank" rel="noopener noreferrer">Visit live company website <ArrowUpRight size={17} aria-hidden="true"/></a>}
         <div className="case-detail-meta">
           <div><span>ROLE</span><strong>{project.role}</strong></div>
           <div><span>FORMAT</span><strong>{project.format}</strong></div>
