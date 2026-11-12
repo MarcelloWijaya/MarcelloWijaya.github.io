@@ -377,6 +377,33 @@ Object.assign(id, {
   "Keep queue state and step-level progress visible within the monitoring workflow.": "Tampilkan status antrean dan progres tiap langkah dalam alur monitoring.",
   "Professional internal work. Company names, exact process settings, production records, service endpoints, and equipment identifiers are intentionally omitted.": "Pekerjaan profesional internal. Nama perusahaan, pengaturan proses, catatan produksi, endpoint layanan, dan identitas peralatan sengaja tidak ditampilkan."
 });
+Object.assign(id, {
+  "A local app for organizing invitation guests and managing personalized WhatsApp messages through one practical workflow.": "Aplikasi lokal untuk mengelola tamu undangan dan pesan WhatsApp personal dalam satu alur kerja praktis.",
+  "A digital invitation and event-management platform that connects guest-facing invitations with event-day coordination.": "Platform undangan digital dan manajemen acara yang menghubungkan pengalaman tamu dengan koordinasi saat acara.",
+  "Authorized interoperability work to bring selected readings from supported healthcare device applications into an Android check-up workflow.": "Integrasi data berizin untuk menghubungkan pembacaan perangkat kesehatan yang didukung ke proses pemeriksaan Android.",
+  "Reverse-engineering research and Android device/data integration": "Penelitian reverse engineering dan integrasi data/perangkat Android",
+  "Android mobile app + Python/Flask backend": "Aplikasi Android + backend Python/Flask",
+  "Authorized professional work · implementation details generalized": "Pekerjaan profesional berizin · detail implementasi disederhanakan",
+  "An authorized investigation into reading selected result data from an HPLC application and transferring it into an internal app.": "Penelitian berizin untuk membaca data hasil tertentu dari aplikasi HPLC dan memindahkannya ke aplikasi internal.",
+  "Reverse-engineering research and data-interoperability contribution": "Kontribusi penelitian reverse engineering dan interoperabilitas data",
+  "Instrument application → internal application": "Aplikasi instrumen → aplikasi internal",
+  "Professional investigation · outcome details generalized": "Penelitian profesional · detail hasil disederhanakan",
+  "An employee-facing attendance app and administrative portal for check-in/out, shift operations, attendance review, and reporting.": "Aplikasi absensi karyawan dan portal admin untuk check-in/out, pengelolaan shift, peninjauan kehadiran, dan laporan.",
+  "Project development across employee web app, admin frontend, and backend APIs": "Pengembangan aplikasi web karyawan, frontend admin, dan backend API",
+  "Next.js web apps + Python/Flask backend": "Aplikasi web Next.js + backend Python/Flask",
+  "Professional office system · internal details generalized": "Sistem kantor profesional · detail internal disederhanakan",
+  "A web-first education information system concept intended to serve multiple organizations and branches through one configurable product.": "Konsep sistem informasi pendidikan berbasis web untuk berbagai organisasi dan cabang dalam satu produk yang dapat dikonfigurasi.",
+  "School information system concept · web-first": "Konsep sistem informasi sekolah · berbasis web",
+  "Planning document only · implementation not started": "Masih dokumen perencanaan · implementasi belum dimulai",
+  "An internal web system for configuring structured work templates, guiding laboratory and manufacturing procedures, and monitoring execution status.": "Sistem web internal untuk membuat template kerja, memandu prosedur manufaktur dan laboratorium, serta memantau status pelaksanaan.",
+  "Next.js / React web application": "Aplikasi web Next.js / React",
+  "Ongoing professional work · sensitive details generalized": "Pekerjaan profesional berlangsung · detail sensitif disederhanakan",
+  "PERSONAL PROJECT · LOCAL APP": "PROYEK PRIBADI · APLIKASI LOKAL",
+  "Development": "Pengembangan",
+  "Data Entry": "Entri Data",
+  "Social Media Marketing": "Pemasaran Media Sosial",
+  "Full-Stack & Android Developer": "Full-Stack & Android Developer"
+});
 export const availableLanguages = ['en','id'];
 export function translate(value, language='en') {
   if (value == null || language !== 'id') return value;
