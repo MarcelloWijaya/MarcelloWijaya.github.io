@@ -335,3 +335,64 @@ html[data-theme] .skip-link:focus { top: 8px; }
     transition: none;
   }
 }
+
+
+/*
+ * Anti-Slop motion contract (MOTION 2):
+ * Controls react to intent. Project tiles express clickability with a 3px lift
+ * and a border change. No perpetual animation, bounce, or scroll hijacking.
+ */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html[data-theme] .nav-contact,
+  html[data-theme] .theme-toggle,
+  html[data-theme] .copy-email-button,
+  html[data-theme] .filters button,
+  html[data-theme] .project-open,
+  html[data-theme] .project-visual,
+  html[data-theme] .project-art,
+  html[data-theme] .expertise-card,
+  html[data-theme] .case-study,
+  html[data-theme] .related-case-study-card,
+  html[data-theme] .contact-button,
+  html[data-theme] .case-detail-share,
+  html[data-theme] .case-detail-contact,
+  html[data-theme] .round-link > svg {
+    transition: transform 190ms cubic-bezier(.2,.7,.25,1), background-color 190ms ease, border-color 190ms ease, color 190ms ease;
+  }
+  html[data-theme] .project-visual:hover .project-art { transform: translateY(-3px); }
+  html[data-theme] .project-visual:hover .project-open { transform: translate(-2px, -2px); }
+  html[data-theme] .expertise-card:hover,
+  html[data-theme] .case-study:hover,
+  html[data-theme] .related-case-study-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+  html[data-theme] .nav-contact:hover,
+  html[data-theme] .contact-button:hover,
+  html[data-theme] .case-detail-contact:hover {
+    transform: translateY(-2px);
+  }
+  html[data-theme] .theme-toggle:hover,
+  html[data-theme] .copy-email-button:hover,
+  html[data-theme] .case-detail-share:hover {
+    transform: translateY(-1px);
+  }
+  html[data-theme] .nav-contact:active,
+  html[data-theme] .contact-button:active,
+  html[data-theme] .case-detail-contact:active,
+  html[data-theme] .theme-toggle:active,
+  html[data-theme] .copy-email-button:active,
+  html[data-theme] .filters button:active { transform: translateY(0); }
+}
+/* Tap feedback remains visible for touch devices without hover. */
+html[data-theme] .contact-button:active,
+html[data-theme] .case-detail-contact:active { filter: brightness(.86); }
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] .project-visual:hover .project-art,
+  html[data-theme] .expertise-card:hover,
+  html[data-theme] .case-study:hover,
+  html[data-theme] .related-case-study-card:hover,
+  html[data-theme] .nav-contact:hover,
+  html[data-theme] .contact-button:hover,
+  html[data-theme] .case-detail-contact:hover { transform: none; }
+}
