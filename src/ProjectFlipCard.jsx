@@ -40,6 +40,16 @@ export function ProjectFlipCard({
       onMouseLeave={() => setFlipped(false)}
       onKeyDown={(event) => { if (event.key === 'Escape' && flipped) { setFlipped(false); event.preventDefault(); } }}
     >
+      <button
+        className="soft-project-flip-toggle"
+        type="button"
+        onClick={() => setFlipped(current => !current)}
+        aria-pressed={flipped}
+        aria-label={flipped ? `Show the front of ${title}` : `Flip ${title} to learn what it does`}
+        title={flipped ? 'Back to preview' : 'Read project summary'}
+      >
+        <RotateCcw size={17} strokeWidth={1.8} aria-hidden="true"/>
+      </button>
       <div className="soft-project-scene">
         <div className="soft-project-rotator">
           <div className="soft-project-face soft-project-front" aria-hidden={flipped} inert={flipped}>
@@ -73,7 +83,7 @@ export function ProjectFlipCard({
             </div>
           </div>
 
-          <div className="soft-project-face soft-project-back" aria-hidden={!flipped} inert={!flipped}>
+          <div className="soft-project-face soft-project-back" role="region" aria-label={`${title} project details`} tabIndex={flipped ? 0 : -1} aria-hidden={!flipped} inert={!flipped}>
             <span className="soft-project-back-label">About this project</span>
             <h3>{title}</h3>
             <p className="soft-project-purpose">{description}</p>
@@ -98,16 +108,6 @@ export function ProjectFlipCard({
           </div>
         </div>
       </div>
-      <button
-        className="soft-project-flip-toggle"
-        type="button"
-        onClick={() => setFlipped(current => !current)}
-        aria-pressed={flipped}
-        aria-label={flipped ? `Show the front of ${title}` : `Flip ${title} to learn what it does`}
-        title={flipped ? 'Back to preview' : 'Read project summary'}
-      >
-        <RotateCcw size={17} strokeWidth={1.8} aria-hidden="true"/>
-      </button>
     </article>
   );
 }
