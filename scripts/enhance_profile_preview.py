@@ -6,7 +6,7 @@ from pathlib import Path
 from PIL import Image, ImageOps, ImageFilter
 
 source = Path("public/assets/profile.jpg")
-target = Path("preview/mww-profile-hd-1800.jpg")
+target = Path("public/preview/mww-profile-hd-1800.jpg")
 target.parent.mkdir(parents=True, exist_ok=True)
 
 with Image.open(source) as original:
