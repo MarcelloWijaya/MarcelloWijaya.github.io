@@ -30,7 +30,7 @@ function getCaseStudySlug(){
   if (!window.location.hash.startsWith(prefix)) return null;
   const slug = window.location.hash.slice(prefix.length);
   return new Set([
-    'dearly','gatherly','iot-healthcare','hplc-data-interoperability',
+    'dearly','gatherly','taxflow','ijt-stockflow','iot-healthcare','hplc-data-interoperability',
     'office-attendance','school-information-system','laboratory-operations',
     'anakueducare','dw-consulting','omah-moesik','inti-jaya-teknik'
   ]).has(slug) ? slug : null;
