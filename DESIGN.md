@@ -51,3 +51,12 @@ Light mode is selected on each fresh page load, regardless of any previously sav
 - **03 Compact**: graphite-square favicon with a white M and two smaller titanium-grey Ws, distributed as `public/assets/mww-favicon.svg`.
 - Keep identity flat, minimal and crisp, with no gradient, orbit, glow, icon-font substitution or reliance on a network image. Avoid reusing the old `marcello.` wordmark.
 - Ensure labels remain understandable to assistive technology, and preserve navbar space at mobile/tablet widths.
+
+## New featured software projects
+
+- **TaxFlow** and **IJT StockFlow** are source-backed, local-only software case studies. Their cards and separate case-study routes must both be present.
+- TaxFlow: tax worksheets, supported PDF review and asset XML export. Do not claim automated DJP filing or completed consulting-office management.
+- IJT StockFlow: Laravel/Vue inventory MVP with barcode-oriented workflows, stock movements, stock opname and inventory insights. Do not label production-ready until integration and real-device tests pass.
+- Keep internal repository URLs, business records, credentials and other private material off the public site.
+- Present five core technical strengths before the supporting six skill-category cards: Full-Stack Development; React.js & Next.js; SQL & Database Engineering; Android Development; CI/CD & Deployment. The supporting skill categories remain intact.
+- Retain the selected Graphite & Titanium palette, no gradients, EN/ID translation, light-default behavior, dark theme, animation, reduced motion and accessible flip cards.

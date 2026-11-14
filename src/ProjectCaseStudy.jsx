@@ -6,6 +6,60 @@ import { BrandMark } from './BrandMark';
 import { t } from './i18n';
 
 const caseStudies = {
+  taxflow: {
+    title:'TaxFlow',
+    status:'PERSONAL PROJECT · LOCAL DEVELOPMENT',
+    summary:'A local SPT working-paper application for organizing personal income-tax data, reviewing source documents, and exporting supported asset records as XML.',
+    role:'Independent software project · local workspace',
+    format:'Laravel web application · local-only workflow',
+    statusDetail:'Under development · not a DJP filing service',
+    sections:[
+      {label:'PRODUCT SCOPE',title:'Organize personal tax working papers',intro:'TaxFlow supports tax worksheets for multiple taxpayers and tax years while keeping account data separated.',points:[
+        'Track yearly worksheet data, income details, bank-interest entries, and supporting information.',
+        'Use version checks to reduce accidental overwrites across concurrent editing sessions.',
+        'Generate printable reports, Excel archives, and JSON backups for review and recovery.'
+      ]},
+      {label:'DOCUMENT REVIEW',title:'Review figures before importing',intro:'Uploaded supported PDF statements can be inspected and matched to tax worksheet records with an explicit preview and confirmation step.',points:[
+        'Extract supported financial-document figures with format-specific parsing and OCR-assisted workflows.',
+        'Review selected values, destination accounts, and before/after effects before saving.',
+        'Keep unsupported or ambiguous figures for manual checking rather than assuming their meaning.'
+      ]},
+      {label:'CORETAX EXPORT LIMITS',title:'Export selected asset categories, not a completed tax filing',intro:'The application can produce XML for selected cash and investment asset lists using documented schema validation.',points:[
+        'Validate fields and generate supported L-1 asset XML output for manual import.',
+        'Keep the final Coretax import, signature and submission outside this local application.',
+        'Do not claim consultant-office workflows, DJP submission APIs, or official production acceptance.'
+      ]}
+    ],
+    stack:['Laravel 13','Livewire 4','PHP','Tailwind CSS 4','SQLite','Node.js'],
+    note:'Local development. Tax data is sensitive and no real client information is shown. XML coverage is limited to supported asset categories; submission to DJP/Coretax is not automated.'
+  },
+  'ijt-stockflow': {
+    title:'IJT StockFlow',
+    status:'PERSONAL PROJECT · MVP IN DEVELOPMENT',
+    summary:'A locally hosted inventory and stock-opname solution for workshop workflows, warehouse stock movements, and barcode-assisted operations.',
+    role:'Independent application development · inventory operations',
+    format:'Laravel API + Vue PWA · local deployment',
+    statusDetail:'MVP source code exists · operational testing pending',
+    sections:[
+      {label:'INVENTORY WORKFLOWS',title:'Track stock movements and physical counts',intro:'The MVP code includes product and warehouse management with stock-movement and stock-opname flows.',points:[
+        'Record stock in/out and warehouse transfers with transaction validation.',
+        'Create stock-opname sessions, count physical stock, review differences, and approve adjustments.',
+        'Maintain stock movement history and support basic supplier and purchase-order workflows.'
+      ]},
+      {label:'SCANNING & INTELLIGENCE',title:'Make stock lookup and replenishment more practical',intro:'The frontend includes camera and USB/Bluetooth barcode scanner interfaces alongside stock insights.',points:[
+        'Scan or enter SKUs for lookup, stock transactions, and counting workflows.',
+        'Surface low-stock alerts, reorder-point settings, fast/slow-moving items, and indicative dead stock.',
+        'Support CSV import/export and Owner/Admin-oriented operational controls.'
+      ]},
+      {label:'VALIDATION & LIMITS',title:'Code-complete features still require real-world testing',intro:'This project is an in-development MVP, not a publicly deployed inventory system.',points:[
+        'Complete cross-device camera-scanner testing and internal HTTPS setup before production use.',
+        'Verify multi-user stock consistency, backup/restore, permission boundaries, and operational flows.',
+        'Keep internal data and source repositories private.'
+      ]}
+    ],
+    stack:['Laravel 13','Vue 3','TypeScript','Vite','PWA','PostgreSQL','ZXing'],
+    note:'In-development local MVP. Real-device scanning, complete integration tests, and production sign-off are still pending. MySQL is supported as an alternative local setup; no production database is asserted.'
+  },
   dearly: {
     title: 'Dearly',
     status: 'PERSONAL PROJECT · LOCAL WINDOWS APP',

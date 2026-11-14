@@ -180,3 +180,42 @@ test('Graphite & Titanium palette is applied across legacy styles and metadata',
   assert.match(read('src/motion.css'), /prefers-reduced-motion:reduce/);
   assert.match(read('src/soft-human.css'), /\.soft-project-card\.is-flipped \.soft-project-rotator/);
 });
+
+test('TaxFlow and IJT StockFlow have accurate local-only cards and navigable detail routes', () => {
+  const engineering=read('src/EngineeringProfile.jsx');
+  const main=read('src/main.jsx');
+  const detail=read('src/ProjectCaseStudy.jsx');
+  for(const slug of ['taxflow','ijt-stockflow']) {
+    assert.ok(engineering.includes(`slug:'${slug}'`), `card missing: ${slug}`);
+    assert.ok(main.includes(`'${slug}'`), `hash route missing: ${slug}`);
+    assert.ok(detail.includes(slug === 'taxflow' ? '  taxflow: {' : "  'ijt-stockflow': {"), `detail page missing: ${slug}`);
+  }
+  assert.match(engineering,/TaxFlow/);
+  assert.match(engineering,/IJT StockFlow/);
+  assert.match(engineering,/MVP IN DEVELOPMENT/);
+  assert.match(detail,/DJP\/Coretax is not automated/);
+  assert.match(detail,/production sign-off are still pending/);
+  assert.ok(!engineering.includes("siteUrl:'https://github.com/MarcelloWijaya/taxflow'"));
+  assert.ok(!engineering.includes("siteUrl:'https://github.com/MarcelloWijaya/ijt-stockflow'"));
+  assert.ok(!detail.includes('https://github.com/MarcelloWijaya/taxflow'));
+  assert.ok(!detail.includes('https://github.com/MarcelloWijaya/ijt-stockflow'));
+});
+
+test('five engineering focus areas are prioritized without removing other skills', async () => {
+  const engineering=read('src/EngineeringProfile.jsx');
+  const css=read('src/soft-human.css');
+  const main=read('src/main.jsx');
+  const {translate}=await import('../src/i18n.js');
+  for(const skill of ['Full-Stack Development','React.js & Next.js','SQL & Database Engineering','Android Development','CI/CD & Deployment']) {
+    assert.ok(engineering.includes(`title:'${skill}'`), `missing core skill ${skill}`);
+  }
+  assert.match(engineering,/className="core-expertise"/);
+  assert.ok(engineering.indexOf('className="core-expertise"') < engineering.indexOf('className="expertise-grid"'));
+  assert.match(engineering,/capabilities\.map/);
+  assert.match(engineering,/supporting-skills/);
+  assert.match(css,/\.core-expertise-grid/);
+  assert.match(css,/@media\(max-width:640px\)/);
+  assert.equal(translate('CORE STRENGTHS','id'),'KEAHLIAN UTAMA');
+  assert.equal(translate('Development & Deployment','id'),'Pengembangan & Deployment');
+  assert.ok(main.includes('usePortfolioMotion(caseStudySlug)'));
+});
